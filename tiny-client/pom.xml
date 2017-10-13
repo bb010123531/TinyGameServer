@@ -16,9 +16,13 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   <dependencies>
+  	<dependency>
+  		<groupId>com.google.protobuf</groupId>
+       	<artifactId>protobuf-java</artifactId>
+    </dependency>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
+      	<groupId>junit</groupId>
+      	<artifactId>junit</artifactId>
       <scope>test</scope>
     </dependency>
   </dependencies>

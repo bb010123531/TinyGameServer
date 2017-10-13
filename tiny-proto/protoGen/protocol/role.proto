@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+//package netty;
+option java_package = "tiny.auto.proto";
+option java_outer_classname = "RoleProto";
+ 
+message Role{
+	required int64 id = 1;
+    required int32 level = 2;
+    required string nickName = 3;
+}
