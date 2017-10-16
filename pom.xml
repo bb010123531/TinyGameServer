@@ -13,7 +13,7 @@
   <modules>
   	<module>tiny-gs</module>
   	<module>tiny-client</module>
-  	<module>tiny-proto</module>
+  	<module>tiny-config</module>
   </modules>
   
   

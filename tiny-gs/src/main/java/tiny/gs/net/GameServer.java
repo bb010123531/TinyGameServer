@@ -8,6 +8,7 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
+import tiny.gs.config.Conf;
 import tiny.gs.handler.child.C2GChannelInitializer;
 
 /**
@@ -26,7 +27,7 @@ public class GameServer {
 					.handler(new LoggingHandler(LogLevel.INFO)).childHandler(new C2GChannelInitializer());
 			
 			// start  the server
-			ChannelFuture f = b.bind(8800).sync();
+			ChannelFuture f = b.bind(Conf.getServerPort()).sync();
 			
 			// wait for close
 			f.channel().closeFuture().sync();
