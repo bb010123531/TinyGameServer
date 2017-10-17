@@ -19,20 +19,22 @@ set outDirClient=..\..\tiny-client\src\main\java
 set tmpDir=tmp
 
 
-::删除之前创建的文件
-del %JAVA_TARGET_PATH%\*.* /f /s /q
+::应该不用删除之前创建的文件
+::del %JAVA_TARGET_PATH%\*.* /f /s /q
 
 
 ::遍历所有文件
 for /f "delims=" %%i in ('dir /b "%SOURCE_FOLDER%\*.proto"') do (
     
-    echo %JAVA_COMPILER_PATH% -I=%SOURCE_FOLDER%  --java_out=%JAVA_TARGET_PATH% %SOURCE_FOLDER%\%%i
+    :: echo %JAVA_COMPILER_PATH% -I=%SOURCE_FOLDER%  --java_out=%JAVA_TARGET_PATH% %SOURCE_FOLDER%\%%i
     %JAVA_COMPILER_PATH% --proto_path=%IMP_FOLDER%  --java_out=%JAVA_TARGET_PATH% %SOURCE_FOLDER%\%%i
     
 )
 
 Xcopy "./%tmpDir%" "%outDirServer%" /s /e /d /y
 Xcopy "./%tmpDir%" "%outDirClient%" /s /e /d /y
+
+rd %tmpDir% /s /q
 
 echo 协议生成完毕。
 
