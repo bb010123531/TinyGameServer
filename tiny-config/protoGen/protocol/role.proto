@@ -1,11 +1,19 @@
 syntax = "proto2";
 
+import "enum.proto";
 //package netty;
 option java_package = "tiny.auto.proto";
 option java_outer_classname = "RoleProto";
- 
+
 message Role{
-	required int64 id = 1;
-    required int32 level = 2;
-    required string nickName = 3;
+	optional PROTO_KEY PROTOCOL_KEY = 1 [default = Role_Key];
+	required int64 id = 2;
+    required int32 level = 3;
+    required string nickName = 4;
+}
+
+message C2SRoleInfo {
+	optional PROTO_KEY PROTOCOL_KEY = 1 [ default = C2SRoleInfo_Key];
+	required int32 id = 2;
+	required string content = 3;
 }

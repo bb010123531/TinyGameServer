@@ -11,11 +11,14 @@ public class C2SMessageInit extends ChannelInboundHandlerAdapter {
 //        System.out.println("=======================================");  
 //        
 		System.err.println("=====channelActive");
-        RoleProto.Role.Builder builder = RoleProto.Role.newBuilder();
-        builder.setId(1);
-        builder.setLevel(10);
-        builder.setNickName("first");
+//        RoleProto.Role.Builder builder = RoleProto.Role.newBuilder();
+//        builder.setId(1);
+//        builder.setLevel(10);
+//        builder.setNickName("first");
 
+		RoleProto.C2SRoleInfo.Builder builder = RoleProto.C2SRoleInfo.newBuilder();
+		builder.setContent("Hello World");
+		
         ctx.writeAndFlush(builder.build());  
     }  
   

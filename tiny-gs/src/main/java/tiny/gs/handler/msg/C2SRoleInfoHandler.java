@@ -1,7 +1,13 @@
 package tiny.gs.handler.msg;
 
-import io.netty.channel.ChannelHandlerAdapter;
+import tiny.gs.handler.MsgHandler;
+import tiny.gs.handler.ProtocolHandler;
 
-public class C2SRoleInfoHandler extends ChannelHandlerAdapter{
+@MsgHandler(msgName = "C2SRoleInfo")
+public class C2SRoleInfoHandler implements ProtocolHandler{
 
+	@Override
+	public void process() {
+		System.err.println("HaHa ~~ ");
+	}
 }

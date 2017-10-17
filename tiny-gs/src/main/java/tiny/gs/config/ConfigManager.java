@@ -14,7 +14,6 @@ public class ConfigManager {
 		File dir = new File(path);
 		File[] files = dir.listFiles();
 		if (files != null) {
-			System.err.println("  有文件了 ！！");
 			try {
 				for (File file : files) {
 					if (file.getName().endsWith(".properties")) {
@@ -45,7 +44,6 @@ public class ConfigManager {
 		while ((line = br.readLine()) != null) {
 			arrs = line.split("//")[0].split("=");
 			if (arrs.length == 2) {
-				System.err.println(arrs[0] + " " + arrs[1]);
 				Conf.init(arrs[0], arrs[1]);
 			}
 		}

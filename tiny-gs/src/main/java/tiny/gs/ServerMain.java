@@ -1,10 +1,12 @@
 package tiny.gs;
 
+import tiny.gs.base.AppContext;
 import tiny.gs.config.ConfigManager;
 import tiny.gs.net.GameServer;
 
 public class ServerMain {
 	public static void start() {
+		AppContext.start();
 		ConfigManager.start();
 		GameServer.start();
 	}

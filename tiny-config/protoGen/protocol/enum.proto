@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+//package netty;
+option java_package = "tiny.auto.proto";
+option java_outer_classname = "Enum";
+
+
+enum PROTO_KEY {
+	Role_Key		= 100;
+	C2SRoleInfo_Key = 101;
+}

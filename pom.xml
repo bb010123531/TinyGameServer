@@ -21,29 +21,51 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <netty.version>4.1.16.Final</netty.version>
     <protobuf.version>3.1.0</protobuf.version>
+    <spring.version>4.3.9.RELEASE</spring.version>
   </properties>
   
-  
   <dependencyManagement>
-  	<dependencies>
-  		<dependency>
+	<dependencies>
+		<dependency>
 			<groupId>io.netty</groupId>
-    		<artifactId>netty-all</artifactId>
-    		<version>${netty.version}</version>
+			<artifactId>netty-all</artifactId>
+			<version>${netty.version}</version>
 		</dependency>
 		<dependency>
-            <groupId>com.google.protobuf</groupId>
-            <artifactId>protobuf-java</artifactId>
-            <version>${protobuf.version}</version>
-        </dependency>
-        
-      	<dependency>
-      		<groupId>junit</groupId>
-      		<artifactId>junit</artifactId>
-      		<version>3.8.1</version>
-     	 	<scope>test</scope>
-      	</dependency>
-  	</dependencies>
-  </dependencyManagement>
+			<groupId>com.google.protobuf</groupId>
+			<artifactId>protobuf-java</artifactId>
+			<version>${protobuf.version}</version>
+		</dependency>
+		<!-- spring -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<!-- spring -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+</dependencyManagement>
 
 </project>

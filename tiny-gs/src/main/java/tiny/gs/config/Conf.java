@@ -3,6 +3,8 @@ package tiny.gs.config;
 import java.util.HashMap;
 import java.util.Map;
 
+import tiny.gs.util.AssertUtil;
+
 public class Conf {
 	private static Map<String, String> configMap = new HashMap<>();
 	
@@ -11,10 +13,11 @@ public class Conf {
 	}
 	
 	public static String getServerIp() {
-		return configMap.get("server_ip");
+		return AssertUtil.getValue(configMap, "server_ip");
 	}
 	
 	public static int getServerPort() {
-		return Integer.parseInt(configMap.get("server_port"));
+		return Integer.parseInt(AssertUtil.getValue(configMap, "server_port"));
+//		return Integer.parseInt(configMap.get("server_port"));
 	}
 }
