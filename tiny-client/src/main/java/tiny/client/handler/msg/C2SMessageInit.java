@@ -17,6 +17,7 @@ public class C2SMessageInit extends ChannelInboundHandlerAdapter {
 //        builder.setNickName("first");
 
 		RoleProto.C2SRoleInfo.Builder builder = RoleProto.C2SRoleInfo.newBuilder();
+		builder.setId(11);
 		builder.setContent("Hello World");
 		
         ctx.writeAndFlush(builder.build());  

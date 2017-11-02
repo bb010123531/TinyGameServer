@@ -7,23 +7,13 @@
     <artifactId>TinyGameServer</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  
-  <artifactId>tiny-gs</artifactId>
-  
-  <name>tiny-gs</name>
+  <artifactId>tiny-link</artifactId>
+  <name>tiny-link</name>
   <url>http://maven.apache.org</url>
-  
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-  
   <dependencies>
-  	<dependency>
-  		<groupId>tiny.gameserver</groupId>
-        <artifactId>tiny-net</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
-    </dependency>
-         
 	<dependency>
 		<groupId>io.netty</groupId>
 		<artifactId>netty-all</artifactId>
@@ -32,25 +22,6 @@
 		<groupId>com.google.protobuf</groupId>
 		<artifactId>protobuf-java</artifactId>
 	</dependency>
-	<!-- spring -->
-	<dependency>
-		<groupId>org.springframework</groupId>
-		<artifactId>spring-beans</artifactId>
-	</dependency>
-	<dependency>
-		<groupId>org.springframework</groupId>
-		<artifactId>spring-context</artifactId>
-	</dependency>
-	<dependency>
-		<groupId>org.springframework</groupId>
-		<artifactId>spring-aop</artifactId>
-	</dependency>
-
-	<dependency>
-		<groupId>org.springframework</groupId>
-		<artifactId>spring-core</artifactId>
-	</dependency>
-	<!-- spring -->
 	<dependency>
 		<groupId>junit</groupId>
 		<artifactId>junit</artifactId>

@@ -12,6 +12,7 @@ public class ProtocolHandlerManager extends ChannelInboundHandlerAdapter {
 //        System.err.println(req);
 //		System.err.println("Server=====channelRead");
 		
+		// fire
 		super.channelRead(ctx, msg);
 	}  
 
