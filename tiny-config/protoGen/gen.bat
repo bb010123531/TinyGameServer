@@ -15,6 +15,8 @@ set JAVA_TARGET_PATH=.\tmp
 set outDirServer=..\..\tiny-gs\src\main\java
 :: 客户端路径
 set outDirClient=..\..\tiny-client\src\main\java
+:: config路径
+set outDirConfig=..\src\main\java
 :: 临时文件夹
 set tmpDir=tmp
 
@@ -31,8 +33,9 @@ for /f "delims=" %%i in ('dir /b "%SOURCE_FOLDER%\*.proto"') do (
     
 )
 
-Xcopy "./%tmpDir%" "%outDirServer%" /s /e /d /y
-Xcopy "./%tmpDir%" "%outDirClient%" /s /e /d /y
+::Xcopy "./%tmpDir%" "%outDirServer%" /s /e /d /y
+::Xcopy "./%tmpDir%" "%outDirClient%" /s /e /d /y
+Xcopy "./%tmpDir%" "%outDirConfig%" /s /e /d /y
 
 rd %tmpDir% /s /q
 

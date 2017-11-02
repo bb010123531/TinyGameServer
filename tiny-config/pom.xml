@@ -7,9 +7,9 @@
     <artifactId>TinyGameServer</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>tiny-proto</artifactId>
+  <artifactId>tiny-config</artifactId>
   
-  <name>tiny-proto</name>
+  <name>tiny-config</name>
   <url>http://maven.apache.org</url>
   
   <properties>
@@ -23,6 +23,11 @@
       <scope>test</scope>
     </dependency>
      -->
+     <dependency>
+		<groupId>com.google.protobuf</groupId>
+		<artifactId>protobuf-java</artifactId>
+	</dependency>
+	
   </dependencies>
-  <packaging>pom</packaging>
+  <packaging>jar</packaging>
 </project>

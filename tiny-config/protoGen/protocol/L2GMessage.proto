@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+import "enum.proto";
+//package netty;
+option java_package = "auto.proto";
+option java_outer_classname = "L2GMessageProto";
+
+message L2GMessage {
+	required string client2LinkChannelId = 1;
+	required int32 contentMsgType = 2;
+	required bytes contentMsg = 3;
+}
+
+message ConnectBroken {
+	optional L2GMessageProtocolType PROTOCOL_TYPE = 1 [default=CONNECTBROKEN];	
+	required string client2LinkChannelId = 2;
+}

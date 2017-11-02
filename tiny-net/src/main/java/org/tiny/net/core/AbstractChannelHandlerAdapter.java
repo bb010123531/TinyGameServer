@@ -1,47 +1,37 @@
-package tiny.client.handler.msg;
+package org.tiny.net.core;
 
-import auto.proto.Enum.PROTO_KEY;
-import auto.proto.RoleProto;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
-import tools.ProtocolUtil;
 
-public class C2SMessageInit extends ChannelInboundHandlerAdapter {
+public abstract class AbstractChannelHandlerAdapter extends ChannelInboundHandlerAdapter {
 	
-	@Override  
-    public void channelActive(ChannelHandlerContext ctx) {  
-//        System.out.println("=======================================");  
-//        
-		System.err.println("=====channelActive");
-//        RoleProto.Role.Builder builder = RoleProto.Role.newBuilder();
-//        builder.setId(1);
-//        builder.setLevel(10);
-//        builder.setNickName("first");
-
-		RoleProto.C2SRoleInfo.Builder builder = RoleProto.C2SRoleInfo.newBuilder();
-		builder.setId(11);
-		builder.setContent("Hello World");
-		
-        ctx.writeAndFlush(ProtocolUtil.toC2LMessage(PROTO_KEY.C2SRoleInfo_Key_VALUE, builder.build()));  
-    }  
-  
-    @Override  
-    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {  
-    	System.err.println("=====exceptionCaught");
-        cause.printStackTrace();  
-        ctx.close();  
-    }
-
+	public abstract void doActice(ChannelHandlerContext ctx);
+	public abstract void doRead(ChannelHandlerContext ctx, Object msg);
+	
 	@Override
-	public void channelInactive(ChannelHandlerContext ctx) throws Exception {
-		System.err.println("=====channelInactive");
-		super.channelInactive(ctx);
+	public void channelActive(ChannelHandlerContext ctx) {
+		System.err.println("=====channelActive");
+		doActice(ctx);
 	}
 
 	@Override
 	public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
 		System.err.println("=====channelRead");
-		super.channelRead(ctx, msg);
+//		super.channelRead(ctx, msg);
+		doRead(ctx, msg);
+	}
+	
+	@Override
+	public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
+		System.err.println("=====exceptionCaught");
+		cause.printStackTrace();
+		ctx.close();
+	}
+
+	@Override
+	public void channelInactive(ChannelHandlerContext ctx) throws Exception {
+		System.err.println("=====channelInactive");
+		super.channelInactive(ctx);
 	}
 
 	@Override
@@ -73,5 +63,5 @@ public class C2SMessageInit extends ChannelInboundHandlerAdapter {
 		// TODO Auto-generated method stub
 		System.err.println("=====userEventTriggered");
 		super.userEventTriggered(ctx, evt);
-	}  
+	}
 }

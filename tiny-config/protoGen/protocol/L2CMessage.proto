@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+//package netty;
+option java_package = "auto.proto";
+option java_outer_classname = "L2CMessageProto";
+
+message L2CMessage {
+	required int32 contentMsgType = 1;
+	required bytes contentMsg = 2;
+}

@@ -2,7 +2,7 @@ syntax = "proto2";
 
 import "enum.proto";
 //package netty;
-option java_package = "tiny.auto.proto";
+option java_package = "auto.proto";
 option java_outer_classname = "RoleProto";
 
 message Role{
