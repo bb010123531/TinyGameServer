@@ -2,18 +2,19 @@ package tiny.gs.handler.msg;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
+import tiny.auto.proto.RoleProto;
 
 public class ProtocolHandlerManager extends ChannelInboundHandlerAdapter {
 
 	@Override
 	public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
 		// TODO Auto-generated method stub
-//		RoleProto.Role req = (RoleProto.Role) msg;  
-//        System.err.println(req);
-//		System.err.println("Server=====channelRead");
+		RoleProto.C2SRoleInfo req = (RoleProto.C2SRoleInfo) msg;  
+        System.err.println(req);
+		System.err.println("Server=====channelRead");
 		
 		// fire
-		super.channelRead(ctx, msg);
+//		super.channelRead(ctx, msg);
 	}  
 
 	@Override
