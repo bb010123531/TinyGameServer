@@ -18,24 +18,23 @@ import io.netty.handler.codec.protobuf.ProtobufVarint32LengthFieldPrepender;
  * 
  * @author chunbo
  */
-public class Connector {
+public class Connector extends AbstractIoService{
 
 	private String ip;
 	private int port = 8800;
-	private ChannelInitializer<SocketChannel> channelInitializer;
 
 	// 配置客户端NIO线程组
 	private EventLoopGroup group = new NioEventLoopGroup();
 
-	public Connector(String ip, int port, ChannelInitializer<SocketChannel> channelInitializer) {
+	public Connector(String name, String ip, int port, AbstractChannelInitializer channelInitializer, AbstractChannelHandlerAdapter channelHandler) {
+		super(name, channelInitializer, channelHandler);
+		
 		this.ip = ip;
 		this.port = port;
-		this.channelInitializer = channelInitializer;
-
-		start();
 	}
-
-	private void start() {
+	
+	@Override
+	public void start() {
 
 		try {
 			Bootstrap b = new Bootstrap();
@@ -64,8 +63,8 @@ public class Connector {
 		}
 	}
 	
-	// TODO 连接断开的时候 需要手动调用
-	private void close() {
+	@Override
+	public void close() {
 		// 优雅退出，释放NIO线程组
 		group.shutdownGracefully();
 	}

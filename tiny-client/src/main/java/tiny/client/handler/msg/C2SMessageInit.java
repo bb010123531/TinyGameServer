@@ -1,77 +1,50 @@
 package tiny.client.handler.msg;
 
+import java.util.Scanner;
+
+import org.tiny.net.core.AbstractChannelHandlerAdapter;
+
 import auto.proto.Enum.PROTO_KEY;
 import auto.proto.RoleProto;
 import io.netty.channel.ChannelHandlerContext;
-import io.netty.channel.ChannelInboundHandlerAdapter;
 import tools.ProtocolUtil;
 
-public class C2SMessageInit extends ChannelInboundHandlerAdapter {
-	
-	@Override  
-    public void channelActive(ChannelHandlerContext ctx) {  
-//        System.out.println("=======================================");  
-//        
+public class C2SMessageInit extends AbstractChannelHandlerAdapter {
+
+	@Override
+	public void doActice(ChannelHandlerContext ctx) {
 		System.err.println("=====channelActive");
-//        RoleProto.Role.Builder builder = RoleProto.Role.newBuilder();
-//        builder.setId(1);
-//        builder.setLevel(10);
-//        builder.setNickName("first");
-
-		RoleProto.C2SRoleInfo.Builder builder = RoleProto.C2SRoleInfo.newBuilder();
-		builder.setId(11);
-		builder.setContent("Hello World");
+		// RoleProto.Role.Builder builder = RoleProto.Role.newBuilder();
+		// builder.setId(1);
+		// builder.setLevel(10);
+		// builder.setNickName("first");
 		
-        ctx.writeAndFlush(ProtocolUtil.toC2LMessage(PROTO_KEY.C2SRoleInfo_Key_VALUE, builder.build()));  
-    }  
-  
-    @Override  
-    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {  
-    	System.err.println("=====exceptionCaught");
-        cause.printStackTrace();  
-        ctx.close();  
-    }
+		Scanner sc = new Scanner(System.in);
+		
+		while (sc.hasNextLine()) {
+			System.err.println("等待输入指令·~ ");
+			int order = sc.nextInt();
+			switch (order) {
+			case 1:
+				RoleProto.C2SRoleInfo.Builder builder = RoleProto.C2SRoleInfo.newBuilder();
+				builder.setId(11);
+				builder.setContent("Hello World 1");
 
-	@Override
-	public void channelInactive(ChannelHandlerContext ctx) throws Exception {
-		System.err.println("=====channelInactive");
-		super.channelInactive(ctx);
+				ctx.writeAndFlush(ProtocolUtil.toC2LMessage(PROTO_KEY.C2SRoleInfo_Key_VALUE, builder.build()));
+				break;
+			case 2:
+				RoleProto.C2SRoleInfo.Builder builder2 = RoleProto.C2SRoleInfo.newBuilder();
+				builder2.setId(11);
+				builder2.setContent("Hello World 2");
+
+				ctx.writeAndFlush(ProtocolUtil.toC2LMessage(PROTO_KEY.C2SRoleInfo_Key_VALUE, builder2.build()));
+				break;
+			}
+		}
 	}
 
 	@Override
-	public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-		System.err.println("=====channelRead");
-		super.channelRead(ctx, msg);
-	}
+	public void doRead(ChannelHandlerContext ctx, Object msg) {
 
-	@Override
-	public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
-		System.err.println("=====channelReadComplete");
-		super.channelReadComplete(ctx);
 	}
-
-	@Override
-	public void channelRegistered(ChannelHandlerContext ctx) throws Exception {
-		System.err.println("=====channelRegistered");
-		super.channelRegistered(ctx);
-	}
-
-	@Override
-	public void channelUnregistered(ChannelHandlerContext ctx) throws Exception {
-		System.err.println("=====channelUnregistered");
-		super.channelUnregistered(ctx);
-	}
-
-	@Override
-	public void channelWritabilityChanged(ChannelHandlerContext ctx) throws Exception {
-		System.err.println("=====channelWritabilityChanged");
-		super.channelWritabilityChanged(ctx);
-	}
-
-	@Override
-	public void userEventTriggered(ChannelHandlerContext ctx, Object evt) throws Exception {
-		// TODO Auto-generated method stub
-		System.err.println("=====userEventTriggered");
-		super.userEventTriggered(ctx, evt);
-	}  
 }

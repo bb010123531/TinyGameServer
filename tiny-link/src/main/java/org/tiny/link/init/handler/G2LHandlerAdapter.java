@@ -17,5 +17,4 @@ public class G2LHandlerAdapter extends AbstractChannelHandlerAdapter{
 		// TODO Auto-generated method stub
 		
 	}
-
 }

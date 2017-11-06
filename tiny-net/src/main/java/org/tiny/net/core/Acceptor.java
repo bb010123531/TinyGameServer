@@ -4,11 +4,9 @@ import org.tiny.net.log.Logger;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
-import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelOption;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
-import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
@@ -19,22 +17,20 @@ import io.netty.handler.logging.LoggingHandler;
  * @author chunbo
  */
 
-public class Acceptor {
+public class Acceptor extends AbstractIoService{
 	
 	private int port = 8800;
-	private ChannelInitializer<SocketChannel> channelInitializer;
 	
 	private EventLoopGroup bossGroup = new NioEventLoopGroup();
 	private EventLoopGroup workerGroup = new NioEventLoopGroup();
 	
-	public Acceptor(int port, ChannelInitializer<SocketChannel> channelInitializer) {
+	public Acceptor(String name, int port, AbstractChannelInitializer channelInitializer, AbstractChannelHandlerAdapter channelHandler) {
+		super(name, channelInitializer, channelHandler);
 		this.port = port;
-		this.channelInitializer = channelInitializer;
-		
-		start();
 	}
 	
-	private void start() {
+	@Override
+	public void start() {
 		
 		try {
 			ServerBootstrap bootStrap = new ServerBootstrap();
@@ -56,8 +52,8 @@ public class Acceptor {
 		}
 	}
 	
-	// TODO 连接断开的时候 需要手动调用
-	private void close() {
+	@Override
+	public void close() {
 		bossGroup.shutdownGracefully();
 		workerGroup.shutdownGracefully();
 	}

@@ -4,11 +4,18 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 
 public abstract class AbstractChannelHandlerAdapter extends ChannelInboundHandlerAdapter {
+	protected AbstractIoService ioService;
+	
+	public void setIoService(AbstractIoService ioService) {
+		this.ioService = ioService;
+	}
 	
 	public abstract void doActice(ChannelHandlerContext ctx);
 	public abstract void doRead(ChannelHandlerContext ctx, Object msg);
 	
-	
+	private void doInactive(ChannelHandlerContext ctx) {
+		ioService.close();
+	}
 	
 	@Override
 	public void channelActive(ChannelHandlerContext ctx) {
@@ -19,7 +26,6 @@ public abstract class AbstractChannelHandlerAdapter extends ChannelInboundHandle
 	@Override
 	public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
 		System.err.println("=====channelRead");
-//		super.channelRead(ctx, msg);
 		doRead(ctx, msg);
 	}
 	
@@ -34,6 +40,7 @@ public abstract class AbstractChannelHandlerAdapter extends ChannelInboundHandle
 	public void channelInactive(ChannelHandlerContext ctx) throws Exception {
 		System.err.println("=====channelInactive");
 		super.channelInactive(ctx);
+		doInactive(ctx);
 	}
 
 	@Override
