@@ -24,6 +24,9 @@ public class Acceptor {
 	private int port = 8800;
 	private ChannelInitializer<SocketChannel> channelInitializer;
 	
+	private EventLoopGroup bossGroup = new NioEventLoopGroup();
+	private EventLoopGroup workerGroup = new NioEventLoopGroup();
+	
 	public Acceptor(int port, ChannelInitializer<SocketChannel> channelInitializer) {
 		this.port = port;
 		this.channelInitializer = channelInitializer;
@@ -32,9 +35,6 @@ public class Acceptor {
 	}
 	
 	private void start() {
-		
-		EventLoopGroup bossGroup = new NioEventLoopGroup();
-		EventLoopGroup workerGroup = new NioEventLoopGroup();
 		
 		try {
 			ServerBootstrap bootStrap = new ServerBootstrap();
@@ -49,12 +49,16 @@ public class Acceptor {
 				Logger.LOG.info("listen port{}success", port);
 			}
 			
-			f.channel().closeFuture().sync();
+//			f.channel().closeFuture().sync();
 		} catch (Exception e) {
 			e.printStackTrace();
-		} finally {
-			bossGroup.shutdownGracefully();
-			workerGroup.shutdownGracefully();
+			close();
 		}
+	}
+	
+	// TODO 连接断开的时候 需要手动调用
+	private void close() {
+		bossGroup.shutdownGracefully();
+		workerGroup.shutdownGracefully();
 	}
 }

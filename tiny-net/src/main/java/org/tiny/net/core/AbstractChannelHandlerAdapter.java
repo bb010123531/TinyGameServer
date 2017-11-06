@@ -8,6 +8,8 @@ public abstract class AbstractChannelHandlerAdapter extends ChannelInboundHandle
 	public abstract void doActice(ChannelHandlerContext ctx);
 	public abstract void doRead(ChannelHandlerContext ctx, Object msg);
 	
+	
+	
 	@Override
 	public void channelActive(ChannelHandlerContext ctx) {
 		System.err.println("=====channelActive");
