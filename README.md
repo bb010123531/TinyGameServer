@@ -1,14 +1,32 @@
-# TinyGameServer Init
+# TinyGameServer
 
-netty4 + protobuf3
+----
+## 相关技能
 
-*/auto will be delete in the future
+-Maven、Spring
+-Java1.8、netty4、protobuf3(syntax2, 习惯用2了, 慢慢学习3)
 
-                ->  gs
-client -> link  ->  gs
-		->  gs
-to be continued..
+### maven结构
 
-Instruction:
+-parent：tiny.gameserver
+-child: 
+`<modules>
+	<module>tiny-gs</module>   // 服务器主逻辑
+	<module>tiny-client</module> // 测试用客户端
+	<module>tiny-config</module> // 表格、协议等相关配置信息
+	<module>tiny-link</module> // link服务器，服务器和客户端的中转
+	<module>tiny-net</module> //  网络相关公用类
+</modules>`
 
-1.tiny-config/protoGen/   gen.bat  gen auto protocol files
+### 项目功能
+实现简单的游戏服务器功能，完成与客户端(用项目下的client测试)消息的通信
+
+### 架构思想
+gs-link-client
+
+### 使用介绍
+
+-生成协议 tiny-config/protoGen/   gen.bat  gen auto protocol files
+-依次启动 ServerMain 、LinkServer、ClientMain，ClientMain控制台输入1或者2进行消息测试
+
+
