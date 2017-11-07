@@ -10,13 +10,13 @@
 
 - parent：tiny.gameserver
 - child: 
-```<modules>
+```
 	<module>tiny-gs</module>   // 服务器主逻辑
 	<module>tiny-client</module> // 测试用客户端
 	<module>tiny-config</module> // 表格、协议等相关配置信息
 	<module>tiny-link</module> // link服务器，服务器和客户端的中转
 	<module>tiny-net</module> //  网络相关公用类
-</modules>```
+```
 
 ### 项目功能
 实现简单的游戏服务器功能，完成与客户端(用项目下的client测试)消息的通信
