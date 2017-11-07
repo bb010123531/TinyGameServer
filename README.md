@@ -1,7 +1,7 @@
 # TinyGameServer
 
 ----
-## 相关技能
+### 相关技能
 
 - Maven、Spring
 - Java1.8、netty4、protobuf3(syntax2, 习惯用2了, 慢慢学习3)
@@ -29,4 +29,7 @@ gs-link-client
 - 生成协议 tiny-config/protoGen/gen.bat  生成相关的协议文件
 - 依次启动 ServerMain 、LinkServer、ClientMain，ClientMain控制台输入1或者2（C2SMessageInit编写）进行消息测试
 
+### 联系我
 
+- wechat `tiny_9892`
+- 欢迎沟通，共同进步
