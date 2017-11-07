@@ -33,9 +33,9 @@ gs-link-client
 
 ### 后续工作
 
--- 加入打表工具，发便应用相关配置
--- aop接入日志
--- 建立内存数据库，接入nosql(redis、mongo)
+- 加入打表工具，发便应用相关配置
+- aop接入日志
+- 建立内存数据库，接入nosql(redis、mongo)
 
 ### 联系我
 
