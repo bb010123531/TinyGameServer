@@ -6,4 +6,5 @@ import java.lang.annotation.RetentionPolicy;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface MsgHandler {
 	public String msgName();
+	public int msgKey();
 }

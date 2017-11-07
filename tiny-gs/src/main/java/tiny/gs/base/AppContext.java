@@ -19,7 +19,8 @@ public class AppContext {
             MsgHandler msgHandler = entry.getValue().getClass().getAnnotation(MsgHandler.class);
             if (null != msgHandler) {
             	String msgName = msgHandler.msgName();
-            	ProtocolHandlerRegisterManager.addHandler(msgName, (ProtocolHandler)entry.getValue());
+//            	ProtocolHandlerRegisterManager.addHandler(msgName, (ProtocolHandler)entry.getValue());
+            	ProtocolHandlerRegisterManager.addHandler(msgHandler.msgKey(), (ProtocolHandler)entry.getValue());
             }
         }
 		

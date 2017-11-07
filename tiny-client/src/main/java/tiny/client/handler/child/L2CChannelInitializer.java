@@ -14,6 +14,7 @@ public class L2CChannelInitializer extends AbstractChannelInitializer{
 	public void initChannelBefore(SocketChannel ch) {
 		ch.pipeline().addLast(new ProtobufVarint32FrameDecoder());  
 		ch.pipeline().addLast(new ProtobufDecoder(L2CMessageProto.L2CMessage.getDefaultInstance()));
+//		ch.pipeline().addLast(new ProtobufVarint32LengthFieldPrepender());
 		ch.pipeline().addLast(new ProtobufEncoder()); 
 	}
 }

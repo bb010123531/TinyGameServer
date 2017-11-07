@@ -39,7 +39,7 @@ public abstract class AbstractChannelHandlerAdapter extends ChannelInboundHandle
 	@Override
 	public void channelInactive(ChannelHandlerContext ctx) throws Exception {
 		System.err.println("=====channelInactive");
-		super.channelInactive(ctx);
+//		super.channelInactive(ctx);
 		doInactive(ctx);
 	}
 

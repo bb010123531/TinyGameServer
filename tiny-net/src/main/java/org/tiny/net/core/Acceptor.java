@@ -37,7 +37,7 @@ public class Acceptor extends AbstractIoService{
 			
 			// the parent (acceptor) and the child (client)
 			bootStrap.group(bossGroup, workerGroup).channel(NioServerSocketChannel.class)
-					.option(ChannelOption.SO_BACKLOG, 100).handler(new LoggingHandler(LogLevel.INFO))
+					.option(ChannelOption.SO_BACKLOG, 100).option(ChannelOption.SO_KEEPALIVE, true).handler(new LoggingHandler(LogLevel.INFO))
 					.childHandler(channelInitializer);
 			
 			ChannelFuture f = bootStrap.bind(port).sync();
