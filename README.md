@@ -1,6 +1,8 @@
 # TinyGameServer
 
 ----
+(Dota比较喜欢小小，tiny由此而来:sunglasses:)
+
 ### 相关技能
 
 - Maven、Spring
