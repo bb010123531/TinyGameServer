@@ -1593,6 +1593,1821 @@ public final class RoleProto {
 
   }
 
+  public interface C2SComplexTestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:C2SComplexTest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional .PROTO_KEY PROTOCOL_KEY = 1 [default = C2SComplexTest_Key];</code>
+     */
+    boolean hasPROTOCOLKEY();
+    /**
+     * <code>optional .PROTO_KEY PROTOCOL_KEY = 1 [default = C2SComplexTest_Key];</code>
+     */
+    auto.proto.Enum.PROTO_KEY getPROTOCOLKEY();
+
+    /**
+     * <code>optional int64 roleId = 2;</code>
+     */
+    boolean hasRoleId();
+    /**
+     * <code>optional int64 roleId = 2;</code>
+     */
+    long getRoleId();
+
+    /**
+     * <code>optional string nickName = 3;</code>
+     */
+    boolean hasNickName();
+    /**
+     * <code>optional string nickName = 3;</code>
+     */
+    java.lang.String getNickName();
+    /**
+     * <code>optional string nickName = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getNickNameBytes();
+
+    /**
+     * <code>repeated .C2SComplexTest.Option optins = 4;</code>
+     */
+    java.util.List<auto.proto.RoleProto.C2SComplexTest.Option> 
+        getOptinsList();
+    /**
+     * <code>repeated .C2SComplexTest.Option optins = 4;</code>
+     */
+    auto.proto.RoleProto.C2SComplexTest.Option getOptins(int index);
+    /**
+     * <code>repeated .C2SComplexTest.Option optins = 4;</code>
+     */
+    int getOptinsCount();
+    /**
+     * <code>repeated .C2SComplexTest.Option optins = 4;</code>
+     */
+    java.util.List<? extends auto.proto.RoleProto.C2SComplexTest.OptionOrBuilder> 
+        getOptinsOrBuilderList();
+    /**
+     * <code>repeated .C2SComplexTest.Option optins = 4;</code>
+     */
+    auto.proto.RoleProto.C2SComplexTest.OptionOrBuilder getOptinsOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code C2SComplexTest}
+   */
+  public  static final class C2SComplexTest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:C2SComplexTest)
+      C2SComplexTestOrBuilder {
+    // Use C2SComplexTest.newBuilder() to construct.
+    private C2SComplexTest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private C2SComplexTest() {
+      pROTOCOLKEY_ = 502;
+      roleId_ = 0L;
+      nickName_ = "";
+      optins_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private C2SComplexTest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              int rawValue = input.readEnum();
+              auto.proto.Enum.PROTO_KEY value = auto.proto.Enum.PROTO_KEY.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(1, rawValue);
+              } else {
+                bitField0_ |= 0x00000001;
+                pROTOCOLKEY_ = rawValue;
+              }
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              roleId_ = input.readInt64();
+              break;
+            }
+            case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000004;
+              nickName_ = bs;
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                optins_ = new java.util.ArrayList<auto.proto.RoleProto.C2SComplexTest.Option>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              optins_.add(
+                  input.readMessage(auto.proto.RoleProto.C2SComplexTest.Option.PARSER, extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+          optins_ = java.util.Collections.unmodifiableList(optins_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return auto.proto.RoleProto.internal_static_C2SComplexTest_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return auto.proto.RoleProto.internal_static_C2SComplexTest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              auto.proto.RoleProto.C2SComplexTest.class, auto.proto.RoleProto.C2SComplexTest.Builder.class);
+    }
+
+    public interface OptionOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:C2SComplexTest.Option)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>optional int32 optionType = 1;</code>
+       */
+      boolean hasOptionType();
+      /**
+       * <code>optional int32 optionType = 1;</code>
+       */
+      int getOptionType();
+
+      /**
+       * <code>optional bool hasValue = 2;</code>
+       */
+      boolean hasHasValue();
+      /**
+       * <code>optional bool hasValue = 2;</code>
+       */
+      boolean getHasValue();
+
+      /**
+       * <code>optional string content = 3;</code>
+       */
+      boolean hasContent();
+      /**
+       * <code>optional string content = 3;</code>
+       */
+      java.lang.String getContent();
+      /**
+       * <code>optional string content = 3;</code>
+       */
+      com.google.protobuf.ByteString
+          getContentBytes();
+    }
+    /**
+     * Protobuf type {@code C2SComplexTest.Option}
+     */
+    public  static final class Option extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:C2SComplexTest.Option)
+        OptionOrBuilder {
+      // Use Option.newBuilder() to construct.
+      private Option(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private Option() {
+        optionType_ = 0;
+        hasValue_ = false;
+        content_ = "";
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private Option(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!parseUnknownField(input, unknownFields,
+                                       extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 8: {
+                bitField0_ |= 0x00000001;
+                optionType_ = input.readInt32();
+                break;
+              }
+              case 16: {
+                bitField0_ |= 0x00000002;
+                hasValue_ = input.readBool();
+                break;
+              }
+              case 26: {
+                com.google.protobuf.ByteString bs = input.readBytes();
+                bitField0_ |= 0x00000004;
+                content_ = bs;
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return auto.proto.RoleProto.internal_static_C2SComplexTest_Option_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return auto.proto.RoleProto.internal_static_C2SComplexTest_Option_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                auto.proto.RoleProto.C2SComplexTest.Option.class, auto.proto.RoleProto.C2SComplexTest.Option.Builder.class);
+      }
+
+      private int bitField0_;
+      public static final int OPTIONTYPE_FIELD_NUMBER = 1;
+      private int optionType_;
+      /**
+       * <code>optional int32 optionType = 1;</code>
+       */
+      public boolean hasOptionType() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional int32 optionType = 1;</code>
+       */
+      public int getOptionType() {
+        return optionType_;
+      }
+
+      public static final int HASVALUE_FIELD_NUMBER = 2;
+      private boolean hasValue_;
+      /**
+       * <code>optional bool hasValue = 2;</code>
+       */
+      public boolean hasHasValue() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional bool hasValue = 2;</code>
+       */
+      public boolean getHasValue() {
+        return hasValue_;
+      }
+
+      public static final int CONTENT_FIELD_NUMBER = 3;
+      private volatile java.lang.Object content_;
+      /**
+       * <code>optional string content = 3;</code>
+       */
+      public boolean hasContent() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional string content = 3;</code>
+       */
+      public java.lang.String getContent() {
+        java.lang.Object ref = content_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            content_ = s;
+          }
+          return s;
+        }
+      }
+      /**
+       * <code>optional string content = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getContentBytes() {
+        java.lang.Object ref = content_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          content_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          output.writeInt32(1, optionType_);
+        }
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          output.writeBool(2, hasValue_);
+        }
+        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, content_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeInt32Size(1, optionType_);
+        }
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeBoolSize(2, hasValue_);
+        }
+        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, content_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      private static final long serialVersionUID = 0L;
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof auto.proto.RoleProto.C2SComplexTest.Option)) {
+          return super.equals(obj);
+        }
+        auto.proto.RoleProto.C2SComplexTest.Option other = (auto.proto.RoleProto.C2SComplexTest.Option) obj;
+
+        boolean result = true;
+        result = result && (hasOptionType() == other.hasOptionType());
+        if (hasOptionType()) {
+          result = result && (getOptionType()
+              == other.getOptionType());
+        }
+        result = result && (hasHasValue() == other.hasHasValue());
+        if (hasHasValue()) {
+          result = result && (getHasValue()
+              == other.getHasValue());
+        }
+        result = result && (hasContent() == other.hasContent());
+        if (hasContent()) {
+          result = result && getContent()
+              .equals(other.getContent());
+        }
+        result = result && unknownFields.equals(other.unknownFields);
+        return result;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptorForType().hashCode();
+        if (hasOptionType()) {
+          hash = (37 * hash) + OPTIONTYPE_FIELD_NUMBER;
+          hash = (53 * hash) + getOptionType();
+        }
+        if (hasHasValue()) {
+          hash = (37 * hash) + HASVALUE_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+              getHasValue());
+        }
+        if (hasContent()) {
+          hash = (37 * hash) + CONTENT_FIELD_NUMBER;
+          hash = (53 * hash) + getContent().hashCode();
+        }
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static auto.proto.RoleProto.C2SComplexTest.Option parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static auto.proto.RoleProto.C2SComplexTest.Option parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static auto.proto.RoleProto.C2SComplexTest.Option parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static auto.proto.RoleProto.C2SComplexTest.Option parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static auto.proto.RoleProto.C2SComplexTest.Option parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static auto.proto.RoleProto.C2SComplexTest.Option parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static auto.proto.RoleProto.C2SComplexTest.Option parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static auto.proto.RoleProto.C2SComplexTest.Option parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static auto.proto.RoleProto.C2SComplexTest.Option parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static auto.proto.RoleProto.C2SComplexTest.Option parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(auto.proto.RoleProto.C2SComplexTest.Option prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code C2SComplexTest.Option}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:C2SComplexTest.Option)
+          auto.proto.RoleProto.C2SComplexTest.OptionOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return auto.proto.RoleProto.internal_static_C2SComplexTest_Option_descriptor;
+        }
+
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return auto.proto.RoleProto.internal_static_C2SComplexTest_Option_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  auto.proto.RoleProto.C2SComplexTest.Option.class, auto.proto.RoleProto.C2SComplexTest.Option.Builder.class);
+        }
+
+        // Construct using auto.proto.RoleProto.C2SComplexTest.Option.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        public Builder clear() {
+          super.clear();
+          optionType_ = 0;
+          bitField0_ = (bitField0_ & ~0x00000001);
+          hasValue_ = false;
+          bitField0_ = (bitField0_ & ~0x00000002);
+          content_ = "";
+          bitField0_ = (bitField0_ & ~0x00000004);
+          return this;
+        }
+
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return auto.proto.RoleProto.internal_static_C2SComplexTest_Option_descriptor;
+        }
+
+        public auto.proto.RoleProto.C2SComplexTest.Option getDefaultInstanceForType() {
+          return auto.proto.RoleProto.C2SComplexTest.Option.getDefaultInstance();
+        }
+
+        public auto.proto.RoleProto.C2SComplexTest.Option build() {
+          auto.proto.RoleProto.C2SComplexTest.Option result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        public auto.proto.RoleProto.C2SComplexTest.Option buildPartial() {
+          auto.proto.RoleProto.C2SComplexTest.Option result = new auto.proto.RoleProto.C2SComplexTest.Option(this);
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+            to_bitField0_ |= 0x00000001;
+          }
+          result.optionType_ = optionType_;
+          if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+            to_bitField0_ |= 0x00000002;
+          }
+          result.hasValue_ = hasValue_;
+          if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+            to_bitField0_ |= 0x00000004;
+          }
+          result.content_ = content_;
+          result.bitField0_ = to_bitField0_;
+          onBuilt();
+          return result;
+        }
+
+        public Builder clone() {
+          return (Builder) super.clone();
+        }
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            Object value) {
+          return (Builder) super.setField(field, value);
+        }
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return (Builder) super.clearField(field);
+        }
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return (Builder) super.clearOneof(oneof);
+        }
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, Object value) {
+          return (Builder) super.setRepeatedField(field, index, value);
+        }
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            Object value) {
+          return (Builder) super.addRepeatedField(field, value);
+        }
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof auto.proto.RoleProto.C2SComplexTest.Option) {
+            return mergeFrom((auto.proto.RoleProto.C2SComplexTest.Option)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(auto.proto.RoleProto.C2SComplexTest.Option other) {
+          if (other == auto.proto.RoleProto.C2SComplexTest.Option.getDefaultInstance()) return this;
+          if (other.hasOptionType()) {
+            setOptionType(other.getOptionType());
+          }
+          if (other.hasHasValue()) {
+            setHasValue(other.getHasValue());
+          }
+          if (other.hasContent()) {
+            bitField0_ |= 0x00000004;
+            content_ = other.content_;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          auto.proto.RoleProto.C2SComplexTest.Option parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (auto.proto.RoleProto.C2SComplexTest.Option) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+        private int bitField0_;
+
+        private int optionType_ ;
+        /**
+         * <code>optional int32 optionType = 1;</code>
+         */
+        public boolean hasOptionType() {
+          return ((bitField0_ & 0x00000001) == 0x00000001);
+        }
+        /**
+         * <code>optional int32 optionType = 1;</code>
+         */
+        public int getOptionType() {
+          return optionType_;
+        }
+        /**
+         * <code>optional int32 optionType = 1;</code>
+         */
+        public Builder setOptionType(int value) {
+          bitField0_ |= 0x00000001;
+          optionType_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional int32 optionType = 1;</code>
+         */
+        public Builder clearOptionType() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          optionType_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private boolean hasValue_ ;
+        /**
+         * <code>optional bool hasValue = 2;</code>
+         */
+        public boolean hasHasValue() {
+          return ((bitField0_ & 0x00000002) == 0x00000002);
+        }
+        /**
+         * <code>optional bool hasValue = 2;</code>
+         */
+        public boolean getHasValue() {
+          return hasValue_;
+        }
+        /**
+         * <code>optional bool hasValue = 2;</code>
+         */
+        public Builder setHasValue(boolean value) {
+          bitField0_ |= 0x00000002;
+          hasValue_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional bool hasValue = 2;</code>
+         */
+        public Builder clearHasValue() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          hasValue_ = false;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object content_ = "";
+        /**
+         * <code>optional string content = 3;</code>
+         */
+        public boolean hasContent() {
+          return ((bitField0_ & 0x00000004) == 0x00000004);
+        }
+        /**
+         * <code>optional string content = 3;</code>
+         */
+        public java.lang.String getContent() {
+          java.lang.Object ref = content_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (bs.isValidUtf8()) {
+              content_ = s;
+            }
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>optional string content = 3;</code>
+         */
+        public com.google.protobuf.ByteString
+            getContentBytes() {
+          java.lang.Object ref = content_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            content_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>optional string content = 3;</code>
+         */
+        public Builder setContent(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+          content_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional string content = 3;</code>
+         */
+        public Builder clearContent() {
+          bitField0_ = (bitField0_ & ~0x00000004);
+          content_ = getDefaultInstance().getContent();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional string content = 3;</code>
+         */
+        public Builder setContentBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+          content_ = value;
+          onChanged();
+          return this;
+        }
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:C2SComplexTest.Option)
+      }
+
+      // @@protoc_insertion_point(class_scope:C2SComplexTest.Option)
+      private static final auto.proto.RoleProto.C2SComplexTest.Option DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new auto.proto.RoleProto.C2SComplexTest.Option();
+      }
+
+      public static auto.proto.RoleProto.C2SComplexTest.Option getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      @java.lang.Deprecated public static final com.google.protobuf.Parser<Option>
+          PARSER = new com.google.protobuf.AbstractParser<Option>() {
+        public Option parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return new Option(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<Option> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Option> getParserForType() {
+        return PARSER;
+      }
+
+      public auto.proto.RoleProto.C2SComplexTest.Option getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    private int bitField0_;
+    public static final int PROTOCOL_KEY_FIELD_NUMBER = 1;
+    private int pROTOCOLKEY_;
+    /**
+     * <code>optional .PROTO_KEY PROTOCOL_KEY = 1 [default = C2SComplexTest_Key];</code>
+     */
+    public boolean hasPROTOCOLKEY() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional .PROTO_KEY PROTOCOL_KEY = 1 [default = C2SComplexTest_Key];</code>
+     */
+    public auto.proto.Enum.PROTO_KEY getPROTOCOLKEY() {
+      auto.proto.Enum.PROTO_KEY result = auto.proto.Enum.PROTO_KEY.valueOf(pROTOCOLKEY_);
+      return result == null ? auto.proto.Enum.PROTO_KEY.C2SComplexTest_Key : result;
+    }
+
+    public static final int ROLEID_FIELD_NUMBER = 2;
+    private long roleId_;
+    /**
+     * <code>optional int64 roleId = 2;</code>
+     */
+    public boolean hasRoleId() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional int64 roleId = 2;</code>
+     */
+    public long getRoleId() {
+      return roleId_;
+    }
+
+    public static final int NICKNAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object nickName_;
+    /**
+     * <code>optional string nickName = 3;</code>
+     */
+    public boolean hasNickName() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional string nickName = 3;</code>
+     */
+    public java.lang.String getNickName() {
+      java.lang.Object ref = nickName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          nickName_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string nickName = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNickNameBytes() {
+      java.lang.Object ref = nickName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nickName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int OPTINS_FIELD_NUMBER = 4;
+    private java.util.List<auto.proto.RoleProto.C2SComplexTest.Option> optins_;
+    /**
+     * <code>repeated .C2SComplexTest.Option optins = 4;</code>
+     */
+    public java.util.List<auto.proto.RoleProto.C2SComplexTest.Option> getOptinsList() {
+      return optins_;
+    }
+    /**
+     * <code>repeated .C2SComplexTest.Option optins = 4;</code>
+     */
+    public java.util.List<? extends auto.proto.RoleProto.C2SComplexTest.OptionOrBuilder> 
+        getOptinsOrBuilderList() {
+      return optins_;
+    }
+    /**
+     * <code>repeated .C2SComplexTest.Option optins = 4;</code>
+     */
+    public int getOptinsCount() {
+      return optins_.size();
+    }
+    /**
+     * <code>repeated .C2SComplexTest.Option optins = 4;</code>
+     */
+    public auto.proto.RoleProto.C2SComplexTest.Option getOptins(int index) {
+      return optins_.get(index);
+    }
+    /**
+     * <code>repeated .C2SComplexTest.Option optins = 4;</code>
+     */
+    public auto.proto.RoleProto.C2SComplexTest.OptionOrBuilder getOptinsOrBuilder(
+        int index) {
+      return optins_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeEnum(1, pROTOCOLKEY_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeInt64(2, roleId_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, nickName_);
+      }
+      for (int i = 0; i < optins_.size(); i++) {
+        output.writeMessage(4, optins_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, pROTOCOLKEY_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, roleId_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, nickName_);
+      }
+      for (int i = 0; i < optins_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, optins_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof auto.proto.RoleProto.C2SComplexTest)) {
+        return super.equals(obj);
+      }
+      auto.proto.RoleProto.C2SComplexTest other = (auto.proto.RoleProto.C2SComplexTest) obj;
+
+      boolean result = true;
+      result = result && (hasPROTOCOLKEY() == other.hasPROTOCOLKEY());
+      if (hasPROTOCOLKEY()) {
+        result = result && pROTOCOLKEY_ == other.pROTOCOLKEY_;
+      }
+      result = result && (hasRoleId() == other.hasRoleId());
+      if (hasRoleId()) {
+        result = result && (getRoleId()
+            == other.getRoleId());
+      }
+      result = result && (hasNickName() == other.hasNickName());
+      if (hasNickName()) {
+        result = result && getNickName()
+            .equals(other.getNickName());
+      }
+      result = result && getOptinsList()
+          .equals(other.getOptinsList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      if (hasPROTOCOLKEY()) {
+        hash = (37 * hash) + PROTOCOL_KEY_FIELD_NUMBER;
+        hash = (53 * hash) + pROTOCOLKEY_;
+      }
+      if (hasRoleId()) {
+        hash = (37 * hash) + ROLEID_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getRoleId());
+      }
+      if (hasNickName()) {
+        hash = (37 * hash) + NICKNAME_FIELD_NUMBER;
+        hash = (53 * hash) + getNickName().hashCode();
+      }
+      if (getOptinsCount() > 0) {
+        hash = (37 * hash) + OPTINS_FIELD_NUMBER;
+        hash = (53 * hash) + getOptinsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static auto.proto.RoleProto.C2SComplexTest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static auto.proto.RoleProto.C2SComplexTest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static auto.proto.RoleProto.C2SComplexTest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static auto.proto.RoleProto.C2SComplexTest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static auto.proto.RoleProto.C2SComplexTest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static auto.proto.RoleProto.C2SComplexTest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static auto.proto.RoleProto.C2SComplexTest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static auto.proto.RoleProto.C2SComplexTest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static auto.proto.RoleProto.C2SComplexTest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static auto.proto.RoleProto.C2SComplexTest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(auto.proto.RoleProto.C2SComplexTest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code C2SComplexTest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:C2SComplexTest)
+        auto.proto.RoleProto.C2SComplexTestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return auto.proto.RoleProto.internal_static_C2SComplexTest_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return auto.proto.RoleProto.internal_static_C2SComplexTest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                auto.proto.RoleProto.C2SComplexTest.class, auto.proto.RoleProto.C2SComplexTest.Builder.class);
+      }
+
+      // Construct using auto.proto.RoleProto.C2SComplexTest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getOptinsFieldBuilder();
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        pROTOCOLKEY_ = 502;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        roleId_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        nickName_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
+        if (optinsBuilder_ == null) {
+          optins_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        } else {
+          optinsBuilder_.clear();
+        }
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return auto.proto.RoleProto.internal_static_C2SComplexTest_descriptor;
+      }
+
+      public auto.proto.RoleProto.C2SComplexTest getDefaultInstanceForType() {
+        return auto.proto.RoleProto.C2SComplexTest.getDefaultInstance();
+      }
+
+      public auto.proto.RoleProto.C2SComplexTest build() {
+        auto.proto.RoleProto.C2SComplexTest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public auto.proto.RoleProto.C2SComplexTest buildPartial() {
+        auto.proto.RoleProto.C2SComplexTest result = new auto.proto.RoleProto.C2SComplexTest(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.pROTOCOLKEY_ = pROTOCOLKEY_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.roleId_ = roleId_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.nickName_ = nickName_;
+        if (optinsBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) == 0x00000008)) {
+            optins_ = java.util.Collections.unmodifiableList(optins_);
+            bitField0_ = (bitField0_ & ~0x00000008);
+          }
+          result.optins_ = optins_;
+        } else {
+          result.optins_ = optinsBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof auto.proto.RoleProto.C2SComplexTest) {
+          return mergeFrom((auto.proto.RoleProto.C2SComplexTest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(auto.proto.RoleProto.C2SComplexTest other) {
+        if (other == auto.proto.RoleProto.C2SComplexTest.getDefaultInstance()) return this;
+        if (other.hasPROTOCOLKEY()) {
+          setPROTOCOLKEY(other.getPROTOCOLKEY());
+        }
+        if (other.hasRoleId()) {
+          setRoleId(other.getRoleId());
+        }
+        if (other.hasNickName()) {
+          bitField0_ |= 0x00000004;
+          nickName_ = other.nickName_;
+          onChanged();
+        }
+        if (optinsBuilder_ == null) {
+          if (!other.optins_.isEmpty()) {
+            if (optins_.isEmpty()) {
+              optins_ = other.optins_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+            } else {
+              ensureOptinsIsMutable();
+              optins_.addAll(other.optins_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.optins_.isEmpty()) {
+            if (optinsBuilder_.isEmpty()) {
+              optinsBuilder_.dispose();
+              optinsBuilder_ = null;
+              optins_ = other.optins_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+              optinsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getOptinsFieldBuilder() : null;
+            } else {
+              optinsBuilder_.addAllMessages(other.optins_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        auto.proto.RoleProto.C2SComplexTest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (auto.proto.RoleProto.C2SComplexTest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private int pROTOCOLKEY_ = 502;
+      /**
+       * <code>optional .PROTO_KEY PROTOCOL_KEY = 1 [default = C2SComplexTest_Key];</code>
+       */
+      public boolean hasPROTOCOLKEY() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional .PROTO_KEY PROTOCOL_KEY = 1 [default = C2SComplexTest_Key];</code>
+       */
+      public auto.proto.Enum.PROTO_KEY getPROTOCOLKEY() {
+        auto.proto.Enum.PROTO_KEY result = auto.proto.Enum.PROTO_KEY.valueOf(pROTOCOLKEY_);
+        return result == null ? auto.proto.Enum.PROTO_KEY.C2SComplexTest_Key : result;
+      }
+      /**
+       * <code>optional .PROTO_KEY PROTOCOL_KEY = 1 [default = C2SComplexTest_Key];</code>
+       */
+      public Builder setPROTOCOLKEY(auto.proto.Enum.PROTO_KEY value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        pROTOCOLKEY_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .PROTO_KEY PROTOCOL_KEY = 1 [default = C2SComplexTest_Key];</code>
+       */
+      public Builder clearPROTOCOLKEY() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        pROTOCOLKEY_ = 502;
+        onChanged();
+        return this;
+      }
+
+      private long roleId_ ;
+      /**
+       * <code>optional int64 roleId = 2;</code>
+       */
+      public boolean hasRoleId() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional int64 roleId = 2;</code>
+       */
+      public long getRoleId() {
+        return roleId_;
+      }
+      /**
+       * <code>optional int64 roleId = 2;</code>
+       */
+      public Builder setRoleId(long value) {
+        bitField0_ |= 0x00000002;
+        roleId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 roleId = 2;</code>
+       */
+      public Builder clearRoleId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        roleId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object nickName_ = "";
+      /**
+       * <code>optional string nickName = 3;</code>
+       */
+      public boolean hasNickName() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional string nickName = 3;</code>
+       */
+      public java.lang.String getNickName() {
+        java.lang.Object ref = nickName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            nickName_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string nickName = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNickNameBytes() {
+        java.lang.Object ref = nickName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          nickName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string nickName = 3;</code>
+       */
+      public Builder setNickName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        nickName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string nickName = 3;</code>
+       */
+      public Builder clearNickName() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        nickName_ = getDefaultInstance().getNickName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string nickName = 3;</code>
+       */
+      public Builder setNickNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        nickName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<auto.proto.RoleProto.C2SComplexTest.Option> optins_ =
+        java.util.Collections.emptyList();
+      private void ensureOptinsIsMutable() {
+        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+          optins_ = new java.util.ArrayList<auto.proto.RoleProto.C2SComplexTest.Option>(optins_);
+          bitField0_ |= 0x00000008;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          auto.proto.RoleProto.C2SComplexTest.Option, auto.proto.RoleProto.C2SComplexTest.Option.Builder, auto.proto.RoleProto.C2SComplexTest.OptionOrBuilder> optinsBuilder_;
+
+      /**
+       * <code>repeated .C2SComplexTest.Option optins = 4;</code>
+       */
+      public java.util.List<auto.proto.RoleProto.C2SComplexTest.Option> getOptinsList() {
+        if (optinsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(optins_);
+        } else {
+          return optinsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .C2SComplexTest.Option optins = 4;</code>
+       */
+      public int getOptinsCount() {
+        if (optinsBuilder_ == null) {
+          return optins_.size();
+        } else {
+          return optinsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .C2SComplexTest.Option optins = 4;</code>
+       */
+      public auto.proto.RoleProto.C2SComplexTest.Option getOptins(int index) {
+        if (optinsBuilder_ == null) {
+          return optins_.get(index);
+        } else {
+          return optinsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .C2SComplexTest.Option optins = 4;</code>
+       */
+      public Builder setOptins(
+          int index, auto.proto.RoleProto.C2SComplexTest.Option value) {
+        if (optinsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureOptinsIsMutable();
+          optins_.set(index, value);
+          onChanged();
+        } else {
+          optinsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .C2SComplexTest.Option optins = 4;</code>
+       */
+      public Builder setOptins(
+          int index, auto.proto.RoleProto.C2SComplexTest.Option.Builder builderForValue) {
+        if (optinsBuilder_ == null) {
+          ensureOptinsIsMutable();
+          optins_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          optinsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .C2SComplexTest.Option optins = 4;</code>
+       */
+      public Builder addOptins(auto.proto.RoleProto.C2SComplexTest.Option value) {
+        if (optinsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureOptinsIsMutable();
+          optins_.add(value);
+          onChanged();
+        } else {
+          optinsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .C2SComplexTest.Option optins = 4;</code>
+       */
+      public Builder addOptins(
+          int index, auto.proto.RoleProto.C2SComplexTest.Option value) {
+        if (optinsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureOptinsIsMutable();
+          optins_.add(index, value);
+          onChanged();
+        } else {
+          optinsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .C2SComplexTest.Option optins = 4;</code>
+       */
+      public Builder addOptins(
+          auto.proto.RoleProto.C2SComplexTest.Option.Builder builderForValue) {
+        if (optinsBuilder_ == null) {
+          ensureOptinsIsMutable();
+          optins_.add(builderForValue.build());
+          onChanged();
+        } else {
+          optinsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .C2SComplexTest.Option optins = 4;</code>
+       */
+      public Builder addOptins(
+          int index, auto.proto.RoleProto.C2SComplexTest.Option.Builder builderForValue) {
+        if (optinsBuilder_ == null) {
+          ensureOptinsIsMutable();
+          optins_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          optinsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .C2SComplexTest.Option optins = 4;</code>
+       */
+      public Builder addAllOptins(
+          java.lang.Iterable<? extends auto.proto.RoleProto.C2SComplexTest.Option> values) {
+        if (optinsBuilder_ == null) {
+          ensureOptinsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, optins_);
+          onChanged();
+        } else {
+          optinsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .C2SComplexTest.Option optins = 4;</code>
+       */
+      public Builder clearOptins() {
+        if (optinsBuilder_ == null) {
+          optins_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          onChanged();
+        } else {
+          optinsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .C2SComplexTest.Option optins = 4;</code>
+       */
+      public Builder removeOptins(int index) {
+        if (optinsBuilder_ == null) {
+          ensureOptinsIsMutable();
+          optins_.remove(index);
+          onChanged();
+        } else {
+          optinsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .C2SComplexTest.Option optins = 4;</code>
+       */
+      public auto.proto.RoleProto.C2SComplexTest.Option.Builder getOptinsBuilder(
+          int index) {
+        return getOptinsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .C2SComplexTest.Option optins = 4;</code>
+       */
+      public auto.proto.RoleProto.C2SComplexTest.OptionOrBuilder getOptinsOrBuilder(
+          int index) {
+        if (optinsBuilder_ == null) {
+          return optins_.get(index);  } else {
+          return optinsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .C2SComplexTest.Option optins = 4;</code>
+       */
+      public java.util.List<? extends auto.proto.RoleProto.C2SComplexTest.OptionOrBuilder> 
+           getOptinsOrBuilderList() {
+        if (optinsBuilder_ != null) {
+          return optinsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(optins_);
+        }
+      }
+      /**
+       * <code>repeated .C2SComplexTest.Option optins = 4;</code>
+       */
+      public auto.proto.RoleProto.C2SComplexTest.Option.Builder addOptinsBuilder() {
+        return getOptinsFieldBuilder().addBuilder(
+            auto.proto.RoleProto.C2SComplexTest.Option.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .C2SComplexTest.Option optins = 4;</code>
+       */
+      public auto.proto.RoleProto.C2SComplexTest.Option.Builder addOptinsBuilder(
+          int index) {
+        return getOptinsFieldBuilder().addBuilder(
+            index, auto.proto.RoleProto.C2SComplexTest.Option.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .C2SComplexTest.Option optins = 4;</code>
+       */
+      public java.util.List<auto.proto.RoleProto.C2SComplexTest.Option.Builder> 
+           getOptinsBuilderList() {
+        return getOptinsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          auto.proto.RoleProto.C2SComplexTest.Option, auto.proto.RoleProto.C2SComplexTest.Option.Builder, auto.proto.RoleProto.C2SComplexTest.OptionOrBuilder> 
+          getOptinsFieldBuilder() {
+        if (optinsBuilder_ == null) {
+          optinsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              auto.proto.RoleProto.C2SComplexTest.Option, auto.proto.RoleProto.C2SComplexTest.Option.Builder, auto.proto.RoleProto.C2SComplexTest.OptionOrBuilder>(
+                  optins_,
+                  ((bitField0_ & 0x00000008) == 0x00000008),
+                  getParentForChildren(),
+                  isClean());
+          optins_ = null;
+        }
+        return optinsBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:C2SComplexTest)
+    }
+
+    // @@protoc_insertion_point(class_scope:C2SComplexTest)
+    private static final auto.proto.RoleProto.C2SComplexTest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new auto.proto.RoleProto.C2SComplexTest();
+    }
+
+    public static auto.proto.RoleProto.C2SComplexTest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<C2SComplexTest>
+        PARSER = new com.google.protobuf.AbstractParser<C2SComplexTest>() {
+      public C2SComplexTest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new C2SComplexTest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<C2SComplexTest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<C2SComplexTest> getParserForType() {
+      return PARSER;
+    }
+
+    public auto.proto.RoleProto.C2SComplexTest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_Role_descriptor;
   private static final 
@@ -1603,6 +3418,16 @@ public final class RoleProto {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_C2SRoleInfo_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_C2SComplexTest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_C2SComplexTest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_C2SComplexTest_Option_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_C2SComplexTest_Option_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1617,8 +3442,13 @@ public final class RoleProto {
       "id\030\002 \002(\003\022\r\n\005level\030\003 \002(\005\022\020\n\010nickName\030\004 \002(" +
       "\t\"]\n\013C2SRoleInfo\0221\n\014PROTOCOL_KEY\030\001 \001(\0162\n" +
       ".PROTO_KEY:\017C2SRoleInfo_Key\022\n\n\002id\030\002 \002(\005\022" +
-      "\017\n\007content\030\003 \002(\tB\027\n\nauto.protoB\tRoleProt" +
-      "o"
+      "\017\n\007content\030\003 \002(\t\"\321\001\n\016C2SComplexTest\0224\n\014P" +
+      "ROTOCOL_KEY\030\001 \001(\0162\n.PROTO_KEY:\022C2SComple" +
+      "xTest_Key\022\016\n\006roleId\030\002 \001(\003\022\020\n\010nickName\030\003 " +
+      "\001(\t\022&\n\006optins\030\004 \003(\0132\026.C2SComplexTest.Opt" +
+      "ion\032?\n\006Option\022\022\n\noptionType\030\001 \001(\005\022\020\n\010has",
+      "Value\030\002 \001(\010\022\017\n\007content\030\003 \001(\tB\027\n\nauto.pro" +
+      "toB\tRoleProto"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1645,6 +3475,18 @@ public final class RoleProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2SRoleInfo_descriptor,
         new java.lang.String[] { "PROTOCOLKEY", "Id", "Content", });
+    internal_static_C2SComplexTest_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_C2SComplexTest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_C2SComplexTest_descriptor,
+        new java.lang.String[] { "PROTOCOLKEY", "RoleId", "NickName", "Optins", });
+    internal_static_C2SComplexTest_Option_descriptor =
+      internal_static_C2SComplexTest_descriptor.getNestedTypes().get(0);
+    internal_static_C2SComplexTest_Option_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_C2SComplexTest_Option_descriptor,
+        new java.lang.String[] { "OptionType", "HasValue", "Content", });
     auto.proto.Enum.getDescriptor();
   }
 

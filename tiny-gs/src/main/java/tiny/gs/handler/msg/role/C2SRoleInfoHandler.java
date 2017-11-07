@@ -1,4 +1,4 @@
-package tiny.gs.handler.msg;
+package tiny.gs.handler.msg.role;
 
 import com.google.protobuf.InvalidProtocolBufferException;
 

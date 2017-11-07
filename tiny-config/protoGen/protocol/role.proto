@@ -17,3 +17,17 @@ message C2SRoleInfo {
 	required int32 id = 2;
 	required string content = 3;
 }
+
+
+message C2SComplexTest {
+	optional PROTO_KEY PROTOCOL_KEY = 1 [ default = C2SComplexTest_Key];
+	optional int64 roleId = 2;
+	optional string nickName = 3;
+	
+	repeated Option optins = 4;
+	message Option {
+		optional int32 optionType = 1;
+		optional bool hasValue = 2;
+		optional string content = 3;
+	}
+}

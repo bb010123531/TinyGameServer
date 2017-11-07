@@ -189,6 +189,10 @@ public final class Enum {
      * <code>C2SRoleInfo_Key = 501;</code>
      */
     C2SRoleInfo_Key(501),
+    /**
+     * <code>C2SComplexTest_Key = 502;</code>
+     */
+    C2SComplexTest_Key(502),
     ;
 
     /**
@@ -199,6 +203,10 @@ public final class Enum {
      * <code>C2SRoleInfo_Key = 501;</code>
      */
     public static final int C2SRoleInfo_Key_VALUE = 501;
+    /**
+     * <code>C2SComplexTest_Key = 502;</code>
+     */
+    public static final int C2SComplexTest_Key_VALUE = 502;
 
 
     public final int getNumber() {
@@ -217,6 +225,7 @@ public final class Enum {
       switch (value) {
         case 500: return Role_Key;
         case 501: return C2SRoleInfo_Key;
+        case 502: return C2SComplexTest_Key;
         default: return null;
       }
     }
@@ -277,9 +286,9 @@ public final class Enum {
     java.lang.String[] descriptorData = {
       "\n\nenum.proto*\'\n\026C2LMessageProtocolType\022\r" +
       "\n\tHEARTBEAT\020d*,\n\026L2GMessageProtocolType\022" +
-      "\022\n\rCONNECTBROKEN\020\310\001*0\n\tPROTO_KEY\022\r\n\010Role" +
-      "_Key\020\364\003\022\024\n\017C2SRoleInfo_Key\020\365\003B\022\n\nauto.pr" +
-      "otoB\004Enum"
+      "\022\n\rCONNECTBROKEN\020\310\001*I\n\tPROTO_KEY\022\r\n\010Role" +
+      "_Key\020\364\003\022\024\n\017C2SRoleInfo_Key\020\365\003\022\027\n\022C2SComp" +
+      "lexTest_Key\020\366\003B\022\n\nauto.protoB\004Enum"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
