@@ -31,6 +31,12 @@ gs-link-client
 - 生成协议 tiny-config/protoGen/gen.bat  生成相关的协议文件
 - 依次启动 ServerMain 、LinkServer、ClientMain，ClientMain控制台输入1或者2（C2SMessageInit编写）进行消息测试
 
+### 后续工作
+
+-- 加入打表工具，发便应用相关配置
+-- aop接入日志
+-- 建立内存数据库，接入nosql(redis、mongo)
+
 ### 联系我
 
 - wechat `tiny_9892`
