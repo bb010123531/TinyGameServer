@@ -1,6 +1,6 @@
 package org.tiny.net.core;
 
-import org.tiny.net.log.Logger;
+import org.tiny.net.log.TinyLoggerAdvice;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
@@ -51,14 +51,14 @@ public class Connector extends AbstractIoService{
 			// 发起异步连接操作
 			ChannelFuture f = b.connect(ip, port).sync();
 			if (f.isSuccess()) {
-				Logger.LOG.error("connect{}:{} success", ip, port);
+//				TinyLogger.LOG.error("connect{}:{} success", ip, port);
 			}
 
 			// 当客户端链路关闭
 			// f.channel().closeFuture().sync();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
-			Logger.LOG.error("connect{}:{} fail", ip, port);
+//			TinyLogger.LOG.error("connect{}:{} fail", ip, port);
 			close();
 		}
 	}
