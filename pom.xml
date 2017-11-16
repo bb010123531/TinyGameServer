@@ -17,8 +17,9 @@
 		<module>tiny-config</module>
 		<module>tiny-link</module>
 		<module>tiny-net</module>
+		<module>tiny-dbGen</module>
+		<module>tiny-db</module>
 	</modules>
-
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -26,6 +27,9 @@
 		<protobuf.version>3.1.0</protobuf.version>
 		<spring.version>4.3.9.RELEASE</spring.version>
 		<log4j2.version>2.7</log4j2.version>
+		<mongodriver.version>2.11.0</mongodriver.version>
+		<springdatacommons.version>1.13.6.RELEASE</springdatacommons.version>
+		<springdatamongodb.version>1.10.4.RELEASE</springdatamongodb.version>
 	</properties>
 
 	<dependencyManagement>
@@ -62,6 +66,12 @@
 				<artifactId>spring-core</artifactId>
 				<version>${spring.version}</version>
 			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-aspects</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
 			<!-- spring -->
 
 			<!-- log -->
@@ -87,6 +97,29 @@
 				<version>3.8.1</version>
 				<scope>test</scope>
 			</dependency>
+
+			<!-- mongodb java driver -->
+			<dependency>
+				<groupId>org.mongodb</groupId>
+				<artifactId>mongo-java-driver</artifactId>
+				<version>${mongodriver.version}</version>
+			</dependency>
+			<!-- spring data mongodb -->
+			<dependency>
+				<groupId>org.springframework.data</groupId>
+				<artifactId>spring-data-commons</artifactId>
+				<version>${springdatacommons.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.data</groupId>
+				<artifactId>spring-data-mongodb</artifactId>
+				<version>${springdatamongodb.version}</version>
+			</dependency>
+			<dependency>
+    			<groupId>org.springframework.data</groupId>
+    			<artifactId>spring-data-commons-core</artifactId>
+    			<version>1.4.1.RELEASE</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -102,6 +135,31 @@
 						<target>1.8</target>
 						<encoding>UTF-8</encoding>
 					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<executions>
+						<execution>
+							<id>copy-resources</id>
+							<phase>validate</phase>
+							<goals>
+								<goal>copy-resources</goal>
+							</goals>
+							<configuration>
+								<outputDirectory>${project.build.directory}/</outputDirectory>
+								<resources>
+									<resource>
+										<directory>src/main/resources</directory>
+										<filtering>false</filtering>
+
+									</resource>
+								</resources>
+							</configuration>
+
+						</execution>
+					</executions>
 				</plugin>
 
 			</plugins>
