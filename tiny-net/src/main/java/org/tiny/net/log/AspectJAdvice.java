@@ -29,10 +29,10 @@ public class AspectJAdvice {
      */    
     @Before("aspectjMethod()")    
     public void doBefore(JoinPoint joinPoint) {    
-        System.out.println("-----doBefore.invoke-----");  
-        System.out.println(" 此处意在执行核心业务逻辑前，做一些安全性的判断等等");  
-        System.out.println(" 可通过joinPoint来获取所需要的内容");  
-        System.out.println("-----End of doBefore()------");  
+//        System.out.println("-----doBefore.invoke-----");  
+//        System.out.println(" 此处意在执行核心业务逻辑前，做一些安全性的判断等等");  
+//        System.out.println(" 可通过joinPoint来获取所需要的内容");  
+//        System.out.println("-----End of doBefore()------");  
     }  
       
       
@@ -49,13 +49,13 @@ public class AspectJAdvice {
      */   
     @Around(value = "aspectjMethod()")    
     public Object doAround(ProceedingJoinPoint pjp) throws Throwable {    
-        System.out.println("-----doAround.invoke-----");  
-        System.out.println(" 此处可以做类似于Before的事情");  
-          
-        //调用核心逻辑  
+//        System.out.println("-----doAround.invoke-----");  
+//        System.out.println(" 此处可以做类似于Before的事情");  
+//          
+//        //调用核心逻辑  
         Object retVal = pjp.proceed();  
-        System.out.println(" 此处可以做类似于After的事情");  
-        System.out.println("-----End of doAround()------");  
+//        System.out.println(" 此处可以做类似于After的事情");  
+//        System.out.println("-----End of doAround()------");  
         return retVal;  
     }    
       
@@ -68,9 +68,9 @@ public class AspectJAdvice {
     @After(value = "aspectjMethod()")    
     public void doAfter(JoinPoint joinPoint) {    
         System.out.println("-----doAfter.invoke-----");  
-        System.out.println(" 此处意在执行核心业务逻辑之后，做一些日志记录操作等等");  
-        System.out.println(" 可通过joinPoint来获取所需要的内容");  
-        System.out.println("-----End of doAfter()------");  
+//        System.out.println(" 此处意在执行核心业务逻辑之后，做一些日志记录操作等等");  
+//        System.out.println(" 可通过joinPoint来获取所需要的内容");  
+//        System.out.println("-----End of doAfter()------");  
     }    
       
     /**  
@@ -80,11 +80,11 @@ public class AspectJAdvice {
      */   
     @AfterReturning(value = "aspectjMethod()", returning = "retVal")    
     public void doReturn(JoinPoint joinPoint, String retVal) {    
-        System.out.println("-----doReturn().invoke-----");  
-        System.out.println("Return Value: " + retVal);   
-        System.out.println(" 此处可以对返回值做进一步处理");  
-        System.out.println(" 可通过joinPoint来获取所需要的内容");  
-        System.out.println("-----End of doReturn()------");  
+//        System.out.println("-----doReturn().invoke-----");  
+//        System.out.println("Return Value: " + retVal);   
+//        System.out.println(" 此处可以对返回值做进一步处理");  
+//        System.out.println(" 可通过joinPoint来获取所需要的内容");  
+//        System.out.println("-----End of doReturn()------");  
     }  
       
     /** 

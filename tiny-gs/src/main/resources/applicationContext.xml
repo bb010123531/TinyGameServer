@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop" 
+       xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans.xsd 
+       http://www.springframework.org/schema/context 
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop 
+       http://www.springframework.org/schema/aop/spring-aop.xsd  
+       http://www.springframework.org/schema/tx 
+       http://www.springframework.org/schema/tx/spring-tx.xsd">
 
 	<!--  
     <bean id="messageRegistryManager"
@@ -14,8 +23,28 @@
     
     -->
     
+    <!-- 启用Spring对基于@AspectJ aspects的配置支持 -->  
+    <aop:aspectj-autoproxy> </aop:aspectj-autoproxy>
+    
+    
     <!-- message handler -->    
     <context:component-scan base-package="tiny.gs.handler">
     	<context:include-filter type="annotation" expression="tiny.gs.handler.MsgHandler"/>
     </context:component-scan>
+    
+    <!-- 
+    <context:component-scan base-package="tiny.gs.base">
+    </context:component-scan>
+    <context:component-scan base-package="tiny.gs.aop">
+    </context:component-scan>
+    -->
+    
+    <!-- 
+    <context:component-scan base-package="org.tiny.net.log">
+    </context:component-scan>
+    <context:component-scan base-package="org.slf4j.impl">
+    </context:component-scan>
+     -->
+    <import resource = "mongo.xml"/>
+	
 </beans>

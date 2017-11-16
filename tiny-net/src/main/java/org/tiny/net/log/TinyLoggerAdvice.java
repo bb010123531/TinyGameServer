@@ -7,9 +7,6 @@ import org.springframework.stereotype.Repository;
 @Repository("tinyLogger")
 public class TinyLoggerAdvice {
 	
-//	@Autowired
-//	private String tinyLoggerName;
-	
 	public TinyLoggerAdvice () {
 		
 	}
@@ -24,7 +21,6 @@ public class TinyLoggerAdvice {
 	}
 	
 	private String addLogPrefix(String name, String logMsg, LogLevel level) {
-		
 		// 以后服务器内会有自己的GameTime
 		Date d = new Date(System.currentTimeMillis());
 		Date trueDate = new Date();

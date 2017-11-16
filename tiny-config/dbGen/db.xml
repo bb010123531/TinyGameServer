@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+<bean name="Role">
+	<variable name="roleId" type="long"/>
+	<variable name="id" type="String"/>
+	<variable name="name" type="String"/>
+	<variable name="age" type="int"/>
+	<variable name="password" type="String"/>
+	<variable name="girlFriend" type="Friend"/>
+	<variable name="friends" type="list" collectionType="ArrayList" value="Friend"/>
+	<variable name="bag" type="map" collectionType="HashMap" key="char" value="String"/>	
+</bean>
+
+<bean name="Friend">
+	<variable name="friends" type="list" collectionType="ArrayList" value="long"/>
+	<variable name="applyList" type="list" collectionType="ArrayList" value="long"/>	
+</bean>
+
+
+</root>

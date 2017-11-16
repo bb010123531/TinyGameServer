@@ -1,6 +1,7 @@
 package org.tiny.net.core;
 
-import org.tiny.net.log.TinyLoggerAdvice;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -18,6 +19,8 @@ import io.netty.handler.logging.LoggingHandler;
  */
 
 public class Acceptor extends AbstractIoService{
+	
+	Logger logger = LoggerFactory.getLogger(Acceptor.class);
 	
 	private int port = 8800;
 	
@@ -42,7 +45,7 @@ public class Acceptor extends AbstractIoService{
 			
 			ChannelFuture f = bootStrap.bind(port).sync();
 			if (f.isSuccess()) {
-//				TinyLogger.LOG.info("listen port{}success", port);
+				logger.info("listen port{}success", port);
 			}
 			
 //			f.channel().closeFuture().sync();

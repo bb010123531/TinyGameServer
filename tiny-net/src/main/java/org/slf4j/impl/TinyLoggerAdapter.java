@@ -2,14 +2,10 @@ package org.slf4j.impl;
 
 import org.slf4j.Logger;
 import org.slf4j.Marker;
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.tiny.net.log.LogLevel;
 import org.tiny.net.log.TinyLoggerAdvice;
 
 public class TinyLoggerAdapter implements Logger{
-	
-//	TinyLogger logger;
 	
 	String name;
 	
@@ -20,14 +16,30 @@ public class TinyLoggerAdapter implements Logger{
 		super();
 		this.name = name;
 		
-		BeanFactory factory = new ClassPathXmlApplicationContext("applicationContext.xml"); 
-		log = (TinyLoggerAdvice) factory.getBean("tinyLogger"); 
+//		BeanFactory factory = new ClassPathXmlApplicationContext("applicationContext.xml"); 
+//		BeanFactory factory = new FileSystemXmlApplicationContext("../tiny-net/src/main/resources/applicationContext.xml");
+//		log = (TinyLoggerAdvice) factory.getBean("tinyLogger"); 
+		log = new TinyLoggerAdvice();
+	}
+	
+	@Override
+	public void info(String arg0) {
+		log.logAspect(LogLevel.INGO, name, arg0);
 	}
 	
 	@Override
 	public void debug(String arg0) {
 		log.logAspect(LogLevel.DEBUG, name, arg0);
 	}
+	
+	@Override
+	public void error(String arg0) {
+		log.logAspect(LogLevel.ERROR, name, arg0);
+	}
+	
+	/**
+	 *  all under are not used
+	 */
 	
 	@Override
 	public void debug(String arg0, Object arg1) {
@@ -81,11 +93,6 @@ public class TinyLoggerAdapter implements Logger{
 	public void debug(Marker arg0, String arg1, Object arg2, Object arg3) {
 		// TODO Auto-generated method stub
 		
-	}
-
-	@Override
-	public void error(String arg0) {
-		log.logAspect(LogLevel.ERROR, name, arg0);
 	}
 
 	@Override
@@ -146,12 +153,6 @@ public class TinyLoggerAdapter implements Logger{
 	public String getName() {
 		// TODO Auto-generated method stub
 		return null;
-	}
-
-	@Override
-	public void info(String arg0) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override

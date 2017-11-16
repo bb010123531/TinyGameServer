@@ -21,7 +21,6 @@ public class TinyLoggerFactory implements ILoggerFactory{
 		if (slf4gLogger != null) {
 			return slf4gLogger;
 		} else {
-//			TinyLogger test = new TinyLogger(name);
 			
 			Logger newInstance = new TinyLoggerAdapter(name);
 			Logger oldInstance = loggerMap.putIfAbsent(name, newInstance);

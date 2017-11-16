@@ -4,7 +4,7 @@ import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class AppContext {
-	public static BeanFactory factory = new ClassPathXmlApplicationContext("applicationContext.xml");
+	public static BeanFactory factory;
 	
 	public static void start() {
 //		ApplicationContext appContext = new FileSystemXmlApplicationContext("classpath:applicationContext.xml");
@@ -12,7 +12,7 @@ public class AppContext {
 		
 //		BeanFactory factory = ;  
 		
-        
+        factory = new ClassPathXmlApplicationContext("applicationContext.xml");
 		// resolve resource leak
 //		((FileSystemXmlApplicationContext)appContext).close();
 	}
