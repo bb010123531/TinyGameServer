@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration status="WARN">
+	<properties>
+		<property name="LOG_DIR">logs</property>
+	</properties>
+	
+	<!-- 
+	Appender 为日志输出目的地，Log4j提供的appender有以下几种：
+	org.apache.log4j.ConsoleAppender（控制台），  
+	org.apache.log4j.FileAppender（文件），  
+	org.apache.log4j.DailyRollingFileAppender（每天产生一个日志文件），  ddd
+	org.apache.log4j.RollingFileAppender（文件大小到达指定尺寸的时候产生一个新的文件），  
+	org.apache.log4j.WriterAppender（将日志信息以流格式发送到任意指定的地方）
+	
+	http://logging.apache.org/log4j/2.x/manual/appenders.html
+ 	-->
+	<appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<!-- ThresholdFilter过滤指定优先级的事件 -->
+            <ThresholdFilter level="debug" onMatch="ACCEPT" onMismatch="DENY"/>
+            <!--[%thread] [%class:%line]-->
+			<PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss} %-5level [%t] %F %M %L - %m%n}"/>
+		</Console>	
+		<RollingFile name="RollingFile" fileName="logs/gs.log" 
+			filePattern="logs/$${date:yyyy-MM}/gs-%d{MM-dd-yyyy}-%i.log">
+			<PatternLayout>
+				<Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="1MB" />
+			</Policies>
+		</RollingFile>
+	</appenders>
+	
+	<loggers>
+		<Root level="debug">
+			<AppenderRef ref="Console"/>
+			<AppenderRef ref="RollingFile"/>
+		</Root>
+	</loggers>
+</Configuration>

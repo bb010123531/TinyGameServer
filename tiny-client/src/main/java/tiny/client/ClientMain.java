@@ -1,15 +1,16 @@
 package tiny.client;
 
+import org.tiny.net.log.TinyLogger;
+
 import tiny.client.net.ClientServer;
 
 public class ClientMain {
 	public static void main(String[] args) {
 		try {
 			ClientServer.start();
-			System.err.println("Client Start SUCCESS !");
+			TinyLogger.LOG.debug("Client Start SUCCESS !");
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			System.err.println("Client Start ERROR !");
+			TinyLogger.LOG.error("Client Start ERROR !");
 			e.printStackTrace();
 		}
 	}

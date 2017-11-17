@@ -1,5 +1,7 @@
 package tiny.gs.handler.msg.role;
 
+import org.tiny.net.log.TinyLogger;
+
 import com.google.protobuf.InvalidProtocolBufferException;
 
 import auto.proto.Enum;
@@ -14,6 +16,6 @@ public class C2SRoleInfoHandler implements ProtocolHandler{
 	@Override
 	public void process(L2GMessage l2g) throws InvalidProtocolBufferException {
 		C2SRoleInfo c2s = C2SRoleInfo.parseFrom(l2g.getContentMsg());
-		System.err.println("rec " + c2s);
+		TinyLogger.LOG.debug("\nrec : " + c2s);
 	}
 }

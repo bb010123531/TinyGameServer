@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import org.tiny.net.core.AbstractChannelHandlerAdapter;
+import org.tiny.net.log.TinyLogger;
 
 import auto.proto.Enum.PROTO_KEY;
 import auto.proto.RoleProto;
@@ -16,16 +17,15 @@ public class C2SMessageInit extends AbstractChannelHandlerAdapter {
 
 	@Override
 	public void doActice(ChannelHandlerContext ctx) {
-		System.err.println("=====channelActive");
+		TinyLogger.LOG.debug("=====channelActive");
 		// RoleProto.Role.Builder builder = RoleProto.Role.newBuilder();
 		// builder.setId(1);
 		// builder.setLevel(10);
 		// builder.setNickName("first");
 		
 		Scanner sc = new Scanner(System.in);
-		
+		TinyLogger.LOG.error("等待Console输入指令(1/2)");
 		while (sc.hasNextLine()) {
-			System.err.println("等待输入指令·~ ");
 			int order = sc.nextInt();
 			switch (order) {
 			case 1:

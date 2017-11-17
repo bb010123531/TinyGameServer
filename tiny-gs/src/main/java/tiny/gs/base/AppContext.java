@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
+import org.tiny.net.log.TinyLogger;
 
 import tiny.auto.bean.Role;
 import tiny.gs.db.RoleDao;
@@ -24,7 +25,7 @@ public class AppContext {
             	String msgName = msgHandler.msgName();
 //            	ProtocolHandlerRegisterManager.addHandler(msgName, (ProtocolHandler)entry.getValue());
             	ProtocolHandlerRegisterManager.addHandler(msgHandler.msgKey(), (ProtocolHandler)entry.getValue());
-            	System.err.println("add handler " + msgHandler.msgKey() + " " + msgName);
+            	TinyLogger.LOG.error("register handler " + msgHandler.msgKey() + " " + msgName);
             }
         }
 		
@@ -45,9 +46,9 @@ public class AppContext {
         params.put("maxAge", 50);  
         
         List<Role> list=roleDaoImpl.findAll(params,collectionName);  
-        System.out.println("role.count()=="+list.size());  
         
-        System.err.println();
+        TinyLogger.LOG.debug("role.count() == ", list.size());
+        
 		// resolve resource leak
 		((FileSystemXmlApplicationContext)appContext).close();
 	}

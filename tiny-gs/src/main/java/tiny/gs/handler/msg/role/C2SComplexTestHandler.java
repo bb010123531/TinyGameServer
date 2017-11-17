@@ -1,5 +1,7 @@
 package tiny.gs.handler.msg.role;
 
+import org.tiny.net.log.TinyLogger;
+
 import com.google.protobuf.InvalidProtocolBufferException;
 
 import auto.proto.Enum;
@@ -15,6 +17,6 @@ public class C2SComplexTestHandler implements ProtocolHandler{
 	public void process(L2GMessage l2g) throws InvalidProtocolBufferException {
 		// TODO Auto-generated method stub
 		C2SComplexTest c2s = C2SComplexTest.parseFrom(l2g.getContentMsg());
-		System.err.println("rec " + c2s);
+		TinyLogger.LOG.debug("\nrec :" + c2s);
 	}
 }

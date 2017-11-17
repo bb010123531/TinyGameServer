@@ -1,6 +1,7 @@
 package tiny.gs.handler.msg;
 
 import org.tiny.net.core.AbstractChannelHandlerAdapter;
+import org.tiny.net.log.TinyLogger;
 
 import com.google.protobuf.InvalidProtocolBufferException;
 
@@ -21,13 +22,13 @@ public class ProtocolHandlerManager extends AbstractChannelHandlerAdapter {
 	public void doRead(ChannelHandlerContext ctx, Object msg) {
 		L2GMessage l2g = (L2GMessage)msg;
 		
-		System.err.println("Server=====channelRead");
+		TinyLogger.LOG.debug("Server=====channelRead");
 		
 		int msgKey = l2g.getContentMsgType();
 		
 		ProtocolHandler handler = ProtocolHandlerRegisterManager.getHandler(msgKey);
 		if (handler == null) {
-			System.err.println("unhandled msg type : " + msgKey);
+			TinyLogger.LOG.error("unhandled msg type : " + msgKey);
 			return;
 		}
 		

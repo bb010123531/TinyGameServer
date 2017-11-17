@@ -2,6 +2,7 @@ package org.tiny.link.init.handler;
 
 import org.tiny.link.channel.ChannelManager;
 import org.tiny.net.core.AbstractChannelHandlerAdapter;
+import org.tiny.net.log.TinyLogger;
 
 import auto.proto.C2LMessageProto.C2LMessage;
 import io.netty.channel.ChannelHandlerContext;
@@ -13,7 +14,7 @@ public class C2LHandlerAdapter extends AbstractChannelHandlerAdapter{
 	@Override
 	public void doActice(ChannelHandlerContext ctx) {
 		// maybe need to restore
-		System.err.println("收到Client的连接~");
+		TinyLogger.LOG.debug("收到Client的连接");
 		String clientChannelId = ctx.channel().id().asLongText();
 		ChannelManager.getInstance().addToClientChannel(clientChannelId, ctx.channel());
 	}
@@ -24,7 +25,7 @@ public class C2LHandlerAdapter extends AbstractChannelHandlerAdapter{
 		
 		String clientChannelId = ctx.channel().id().asLongText();
 		// 转发给GS
-		System.err.println("发给Gs~");
+//		System.err.println("发给Gs~");
 		ChannelManager.getInstance().getGs().writeAndFlush(ProtocolUtil.toL2GMessage(clientChannelId, c2l.getContentMsgType(), c2l.getContentMsg()));
 	}
 }

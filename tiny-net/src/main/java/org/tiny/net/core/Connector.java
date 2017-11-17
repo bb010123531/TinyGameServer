@@ -1,7 +1,6 @@
 package org.tiny.net.core;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.tiny.net.log.TinyLogger;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
@@ -20,8 +19,6 @@ import io.netty.handler.codec.protobuf.ProtobufVarint32LengthFieldPrepender;
  * @author chunbo
  */
 public class Connector extends AbstractIoService{
-	
-	Logger logger = LoggerFactory.getLogger(Connector.class);
 	
 	private String ip;
 	private int port = 8800;
@@ -54,14 +51,14 @@ public class Connector extends AbstractIoService{
 			// 发起异步连接操作
 			ChannelFuture f = b.connect(ip, port).sync();
 			if (f.isSuccess()) {
-				logger.info("connect{}:{} success ", ip, port);
+				TinyLogger.LOG.info("connect {}:{} success ", ip, port);
 			}
 
 			// 当客户端链路关闭
 			// f.channel().closeFuture().sync();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
-			logger.error("connect{}:{} fail ", ip, port);
+			TinyLogger.LOG.error("connect{}:{} fail ", ip, port);
 			close();
 		}
 	}

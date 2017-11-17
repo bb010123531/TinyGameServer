@@ -1,15 +1,12 @@
 package tiny.gs;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.tiny.net.log.TinyLogger;
 
 import tiny.gs.base.AppContext;
 import tiny.gs.config.ConfigManager;
 import tiny.gs.net.GameServer;
 
 public class ServerMain {
-	static Logger logger = LoggerFactory.getLogger(ServerMain.class);
-	
 	public static void start() {
 		AppContext.start();
 		ConfigManager.start();
@@ -19,12 +16,17 @@ public class ServerMain {
 	public static void main(String[] args) {
 		try {
 			start();
+			TinyLogger.LOG.debug("Debug Message");
+			TinyLogger.LOG.info("Info Message");
+			TinyLogger.LOG.warn("Warn Message");
+			TinyLogger.LOG.error("Error Message");
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-				logger.error("GameServer Start ERROR ! ");
+			TinyLogger.LOG.error("GameServer Start ERROR !");
 			e.printStackTrace();
 		}
 		
-		logger.info("GameServer Start SUCCESS! ");
+		TinyLogger.LOG.info("GameServer Start SUCCESS!");
 	}
 }

@@ -1,5 +1,7 @@
 package org.tiny.net.core;
 
+import org.tiny.net.log.TinyLogger;
+
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 
@@ -19,58 +21,58 @@ public abstract class AbstractChannelHandlerAdapter extends ChannelInboundHandle
 	
 	@Override
 	public void channelActive(ChannelHandlerContext ctx) {
-		System.err.println("=====channelActive");
+		TinyLogger.LOG.debug("=====channelActive");
 		doActice(ctx);
 	}
 
 	@Override
 	public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-		System.err.println("=====channelRead");
+		TinyLogger.LOG.debug("=====channelRead");
 		doRead(ctx, msg);
 	}
 	
 	@Override
 	public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
-		System.err.println("=====exceptionCaught");
+		TinyLogger.LOG.debug("=====exceptionCaught");
 		cause.printStackTrace();
 		ctx.close();
 	}
 
 	@Override
 	public void channelInactive(ChannelHandlerContext ctx) throws Exception {
-		System.err.println("=====channelInactive");
+		TinyLogger.LOG.debug("=====channelInactive");
 //		super.channelInactive(ctx);
 		doInactive(ctx);
 	}
 
 	@Override
 	public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
-		System.err.println("=====channelReadComplete");
+		TinyLogger.LOG.debug("=====channelReadComplete");
 		super.channelReadComplete(ctx);
 	}
 
 	@Override
 	public void channelRegistered(ChannelHandlerContext ctx) throws Exception {
-		System.err.println("=====channelRegistered");
+		TinyLogger.LOG.debug("=====channelRegistered");
 		super.channelRegistered(ctx);
 	}
 
 	@Override
 	public void channelUnregistered(ChannelHandlerContext ctx) throws Exception {
-		System.err.println("=====channelUnregistered");
+		TinyLogger.LOG.debug("=====channelUnregistered");
 		super.channelUnregistered(ctx);
 	}
 
 	@Override
 	public void channelWritabilityChanged(ChannelHandlerContext ctx) throws Exception {
-		System.err.println("=====channelWritabilityChanged");
+		TinyLogger.LOG.debug("=====channelWritabilityChanged");
 		super.channelWritabilityChanged(ctx);
 	}
 
 	@Override
 	public void userEventTriggered(ChannelHandlerContext ctx, Object evt) throws Exception {
 		// TODO Auto-generated method stub
-		System.err.println("=====userEventTriggered");
+		TinyLogger.LOG.debug("=====userEventTriggered");
 		super.userEventTriggered(ctx, evt);
 	}
 }

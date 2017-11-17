@@ -1,7 +1,6 @@
 package org.tiny.net.core;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.tiny.net.log.TinyLogger;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -20,8 +19,6 @@ import io.netty.handler.logging.LoggingHandler;
 
 public class Acceptor extends AbstractIoService{
 	
-	Logger logger = LoggerFactory.getLogger(Acceptor.class);
-	
 	private int port = 8800;
 	
 	private EventLoopGroup bossGroup = new NioEventLoopGroup();
@@ -34,18 +31,18 @@ public class Acceptor extends AbstractIoService{
 	
 	@Override
 	public void start() {
-		
 		try {
 			ServerBootstrap bootStrap = new ServerBootstrap();
 			
 			// the parent (acceptor) and the child (client)
 			bootStrap.group(bossGroup, workerGroup).channel(NioServerSocketChannel.class)
-					.option(ChannelOption.SO_BACKLOG, 100).option(ChannelOption.SO_KEEPALIVE, true).handler(new LoggingHandler(LogLevel.INFO))
+					.option(ChannelOption.SO_BACKLOG, 100)//.option(ChannelOption.SO_KEEPALIVE, true)
+					.handler(new LoggingHandler(LogLevel.INFO))
 					.childHandler(channelInitializer);
 			
 			ChannelFuture f = bootStrap.bind(port).sync();
 			if (f.isSuccess()) {
-				logger.info("listen port{}success", port);
+				TinyLogger.LOG.info("listen port {} success", port);
 			}
 			
 //			f.channel().closeFuture().sync();
