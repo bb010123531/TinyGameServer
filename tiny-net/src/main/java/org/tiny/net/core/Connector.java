@@ -1,6 +1,7 @@
 package org.tiny.net.core;
 
 import org.tiny.net.log.TinyLogger;
+import org.tiny.net.thread.NamedThreadFactory;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
@@ -24,7 +25,7 @@ public class Connector extends AbstractIoService{
 	private int port = 8800;
 
 	// 配置客户端NIO线程组
-	private EventLoopGroup group = new NioEventLoopGroup();
+	private EventLoopGroup group = new NioEventLoopGroup(0, new NamedThreadFactory("co-parent"));
 
 	public Connector(String name, String ip, int port, AbstractChannelInitializer channelInitializer, AbstractChannelHandlerAdapter channelHandler) {
 		super(name, channelInitializer, channelHandler);

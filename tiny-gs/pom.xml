@@ -29,6 +29,12 @@
         <artifactId>tiny-config</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </dependency>
+    
+    <dependency>
+  		<groupId>tiny.gameserver</groupId>
+        <artifactId>tiny-db</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </dependency>
          
 	<dependency>
 		<groupId>io.netty</groupId>

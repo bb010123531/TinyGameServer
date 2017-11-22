@@ -47,7 +47,7 @@ public class AppContext {
         
         List<Role> list=roleDaoImpl.findAll(params,collectionName);  
         
-        TinyLogger.LOG.debug("role.count() == ", list.size());
+        TinyLogger.LOG.error("role.count() == " + list.size());
         
 		// resolve resource leak
 		((FileSystemXmlApplicationContext)appContext).close();

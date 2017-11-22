@@ -1,6 +1,7 @@
 package org.tiny.net.core;
 
 import org.tiny.net.log.TinyLogger;
+import org.tiny.net.thread.NamedThreadFactory;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -21,8 +22,8 @@ public class Acceptor extends AbstractIoService{
 	
 	private int port = 8800;
 	
-	private EventLoopGroup bossGroup = new NioEventLoopGroup();
-	private EventLoopGroup workerGroup = new NioEventLoopGroup();
+	private EventLoopGroup bossGroup = new NioEventLoopGroup(0, new NamedThreadFactory("ac-parent"));
+	private EventLoopGroup workerGroup = new NioEventLoopGroup(0, new NamedThreadFactory("ac-child"));
 	
 	public Acceptor(String name, int port, AbstractChannelInitializer channelInitializer, AbstractChannelHandlerAdapter channelHandler) {
 		super(name, channelInitializer, channelHandler);

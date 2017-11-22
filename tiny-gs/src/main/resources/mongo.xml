@@ -1,15 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <beans xmlns="http://www.springframework.org/schema/beans"  
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"  
-    xmlns:tx="http://www.springframework.org/schema/tx" xmlns:util="http://www.springframework.org/schema/util"  
-    xmlns:context="http://www.springframework.org/schema/context" xmlns:mongo="http://www.springframework.org/schema/data/mongo"  
-    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd  
-        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd  
-    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd  
-    http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd  
-    http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo-1.0.xsd  
-    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:aop="http://www.springframework.org/schema/aop"  
+    xmlns:tx="http://www.springframework.org/schema/tx" 
+    xmlns:util="http://www.springframework.org/schema/util"  
+    xmlns:context="http://www.springframework.org/schema/context" 
+    xmlns:mongo="http://www.springframework.org/schema/data/mongo"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd  
+    http://www.springframework.org/schema/aop 
+    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd  
+    http://www.springframework.org/schema/tx 
+    http://www.springframework.org/schema/tx/spring-tx-3.0.xsd  
+    http://www.springframework.org/schema/util 
+    http://www.springframework.org/schema/util/spring-util-3.0.xsd  
+    http://www.springframework.org/schema/data/mongo 
+    http://www.springframework.org/schema/data/mongo/spring-mongo-2.0.xsd  
+    http://www.springframework.org/schema/data/repository
+	http://www.springframework.org/schema/data/repository/spring-repository-1.5.xsd
+    http://www.springframework.org/schema/context 
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd">  
     <context:component-scan base-package="tiny.gs.db"/>
     
     <!-- 获取配置资源 -->  
@@ -17,7 +28,7 @@
     
      <!--  <bean class="cn.mongo.util.SpringContextUtil"></bean>  -->
      
-    <mongo:mongo id="mongo" replica-set="${mongo.replicaSet}">  
+    <mongo:mongo-client id="mongo" replica-set="${mongo.replicaSet}">  
         <!--
          connections-per-host: 每个主机答应的连接数（每个主机的连接池大小），当连接池被用光时，会被阻塞住   
          max-wait-time: 被阻塞线程从连接池获取连接的最长等待时间（ms）  
@@ -26,19 +37,14 @@
          slave-ok:指明是否答应驱动从次要节点或者奴隶节点读取数据  
          -->  
          
-  	<mongo:options
+  	<mongo:client-options
     	connections-per-host="${mongo.connectionsPerHost}"
     	threads-allowed-to-block-for-connection-multiplier="${mongo.threadsAllowedToBlockForConnectionMultiplier}"
     	connect-timeout="${mongo.connectTimeout}"
 		max-wait-time="${mongo.maxWaitTime}"
-     	auto-connect-retry="${mongo.autoConnectRetry}"
      	socket-keep-alive="${mongo.socketKeepAlive}"
-     	socket-timeout="${mongo.socketTimeout}"
-     	slave-ok="${mongo.slaveOk}"
-     	write-number="1"
-     	write-timeout="0"
-     	write-fsync="true"/>
-	</mongo:mongo>
+     	socket-timeout="${mongo.socketTimeout}"/>
+	</mongo:mongo-client>
 	 
 	<mongo:db-factory id="mongoDbFactory" dbname="database" mongo-ref="mongo"/>
 	
