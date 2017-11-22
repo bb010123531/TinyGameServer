@@ -7,7 +7,7 @@
 
 - Maven、Spring
 - Java1.8、netty4、protobuf3(syntax2, 习惯用2了, 慢慢学习3)
-- Spring-data-mongo（11.16更新）
+- spring-data-mongo
 
 ### maven结构
 
@@ -43,6 +43,8 @@ gs-link-client
 
 - dbGen 数据库Bean生成工具(不断根据业务需求更新)
 - spring-data-mongo(查了半天的问题, 原来是版本没选对....)
+- mongo版本由2.x改为3.x(网上稍早的教程都是2.x的，改的时候一堆坑)
+- 将解码后的消息封装成task，派发到业务线程池中，以保证NIO线程被尽快释放
 
 ### 联系我
 
