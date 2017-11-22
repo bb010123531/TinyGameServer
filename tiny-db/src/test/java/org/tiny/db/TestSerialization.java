@@ -1,4 +1,4 @@
-package tiny.gs;
+package org.tiny.db;
 
 import java.util.ArrayList;
 import java.util.Arrays;
