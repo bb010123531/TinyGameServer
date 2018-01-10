@@ -30,8 +30,8 @@ gs-link-client
 ### 使用介绍
 
 - 生成协议 tiny-config/protoGen/gen.bat  生成相关的协议文件
-- 依次启动 ServerMain 、LinkServer、ClientMain，ClientMain控制台输入1或者2（C2SMessageInit编写）进行消息测试
 - 生成数据可以bean tiny-config/dbGen/dbGen.bat 生成bean文件 (11.16更新为了方便测试 现在在AppContext中加入测试的方法)
+- 依次启动 ServerMain 、LinkServer、ClientMain，ClientMain控制台输入1或者2（C2SMessageInit编写）进行消息测试
 
 ### 后续工作
 
