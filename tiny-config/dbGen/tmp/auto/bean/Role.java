@@ -1,7 +1,7 @@
 package tiny.auto.bean;
 //auto-gen file, do not edit anyway
 
-public class Role {
+public class Role implements org.tiny.base.Bean {
 
 	private long roleId;
 
@@ -23,14 +23,14 @@ public class Role {
 		this.id = id;
 	}
 
-	private String name = "";
+	private String nickName = "";
 
-	public String getName() {
-		return name;
+	public String getNickName() {
+		return nickName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setNickName(String nickName) {
+		this.nickName = nickName;
 	}
 
 	private int age;
@@ -90,7 +90,7 @@ public class Role {
 		sb.append(", ");
 		sb.append("id=" + id);
 		sb.append(", ");
-		sb.append("name=" + name);
+		sb.append("nickName=" + nickName);
 		sb.append(", ");
 		sb.append("age=" + age);
 		sb.append(", ");

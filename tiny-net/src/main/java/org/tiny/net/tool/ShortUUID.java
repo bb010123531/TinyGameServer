@@ -21,12 +21,18 @@ public class ShortUUID {
 	public static String generateShortUuid() 
 	{
 		StringBuffer shortBuffer = new StringBuffer();
+		System.err.println(UUID.randomUUID().toString());
 		String uuid = UUID.randomUUID().toString().replace("-", "");
 		
+		System.err.println(uuid);
 		for (int i = 0; i < 8; i++) 
 		{
 			String str = uuid.substring(i * 4, i * 4 + 4);
+			System.err.println(str);
 			int x = Integer.parseInt(str, 16);
+			System.err.println(x);
+			System.err.println(0x3E);
+			System.err.println(x%0x3E);
 			shortBuffer.append(chars[x % 0x3E]);
 		}
 		return shortBuffer.toString();

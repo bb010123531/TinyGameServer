@@ -1,7 +1,7 @@
 package tiny.auto.bean;
 //auto-gen file, do not edit anyway
 
-public class Friend {
+public class Friend implements org.tiny.base.Bean {
 
 	private java.util.List<Long> friends = new java.util.ArrayList<>();
 

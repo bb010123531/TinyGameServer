@@ -6,7 +6,9 @@ import java.util.Map;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
+import org.tiny.base.MongoBase;
 import org.tiny.net.log.TinyLogger;
+import org.tiny.util.SerializationUtil;
 
 import tiny.auto.bean.Role;
 import tiny.gs.db.RoleDao;
@@ -42,6 +44,17 @@ public class AppContext {
 //            roleDaoImpl.insert(role,collectionName);  
 //        }  
         
+		MongoBase mongo = new MongoBase();
+//		for (int i = 0 ; i < 100  ; i++) {
+//			Role role = new Role();
+//			role.setId("" + i);
+//			role.setAge(i);
+//			role.setNickName("aaa" + i);
+//			role.setPassword("aaaa" + i);
+//			
+//			mongo.insert(collectionName, SerializationUtil.serialize(i), SerializationUtil.serialize(role));
+//		}
+		
         Map<String,Object> params=new HashMap<String,Object>();  
         params.put("maxAge", 50);  
         

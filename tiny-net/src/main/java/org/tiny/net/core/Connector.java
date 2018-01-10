@@ -39,7 +39,11 @@ public class Connector extends AbstractIoService{
 
 		try {
 			Bootstrap b = new Bootstrap();
-			b.group(group).channel(NioSocketChannel.class).option(ChannelOption.TCP_NODELAY, true).option(ChannelOption.SO_KEEPALIVE, true)
+			b.group(group).channel(NioSocketChannel.class)
+				.option(ChannelOption.TCP_NODELAY, true)
+				.option(ChannelOption.SO_KEEPALIVE, true)
+				// IO 超时，  还有一种是 Channel超时，
+				.option(ChannelOption.CONNECT_TIMEOUT_MILLIS, 1000)
 					.handler(new ChannelInitializer<SocketChannel>() {
 						@Override
 						public void initChannel(SocketChannel ch) throws Exception {
@@ -51,6 +55,19 @@ public class Connector extends AbstractIoService{
 
 			// 发起异步连接操作
 			ChannelFuture f = b.connect(ip, port).sync();
+			
+			/**  Channel超时， 不代表IO超时， 如果只是Channel超时，并且没有关闭资源链接，可能后续IO仍会连上，会导致严重的问题
+			ChannelFuture f = b.connect(ip, port);
+			f.awaitUninterruptibly(1000, TimeUnit.MILLISECONDS);
+			if (f.isCancelled()) {
+				
+			} else if (!f.isSuccess()) {
+				
+			} else {
+				// success
+			}
+			*/
+			
 			if (f.isSuccess()) {
 				TinyLogger.LOG.info("connect {}:{} success ", ip, port);
 			}

@@ -5,6 +5,7 @@ import org.tiny.net.log.TinyLogger;
 import com.google.protobuf.InvalidProtocolBufferException;
 
 import io.netty.channel.Channel;
+import tiny.gs.exception.UnCheckedException;
 import tiny.gs.handler.ProtocolHandler;
 import tiny.gs.handler.ProtocolHandlerRegisterManager;
 
@@ -33,6 +34,7 @@ public class UserTask implements Runnable{
 		} catch (InvalidProtocolBufferException e) {
 			TinyLogger.LOG.error("handler throw exception" + e.getMessage());
 			e.printStackTrace();
+			throw new UnCheckedException("handler throw exception" + e.getMessage());
 		}
 	} 
 	

@@ -3,7 +3,7 @@
 <bean name="Role">
 	<variable name="roleId" type="long"/>
 	<variable name="id" type="String"/>
-	<variable name="name" type="String"/>
+	<variable name="nickName" type="String"/>
 	<variable name="age" type="int"/>
 	<variable name="password" type="String"/>
 	<variable name="girlFriend" type="Friend"/>
@@ -16,5 +16,13 @@
 	<variable name="applyList" type="list" collectionType="ArrayList" value="long"/>	
 </bean>
 
+<table name="roles" bean="Role"/>
+	
+<bean name="Guild">
+	<variable name="guildId" type="long"/>
+	<variable name="guildName" type="String"/>
+</bean>
+
+<table name="guilds" bean="Guild"/>
 
 </root>

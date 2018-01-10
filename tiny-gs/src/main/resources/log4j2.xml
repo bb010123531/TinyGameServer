@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
 
 <Configuration status="WARN">
 	<properties>
@@ -33,8 +34,17 @@
 			</Policies>
 		</RollingFile>
 	</appenders>
-	
+	<!-- 
+	LogManager.getLogger("org.mongodb.driver.connection").setLevel(org.apache.log4j.Level.OFF);
+		LogManager.getLogger("org.mongodb.driver.management").setLevel(org.apache.log4j.Level.OFF);
+		LogManager.getLogger("org.mongodb.driver.cluster").setLevel(org.apache.log4j.Level.OFF);
+		LogManager.getLogger("org.mongodb.driver.protocol.insert").setLevel(org.apache.log4j.Level.OFF);
+		LogManager.getLogger("org.mongodb.driver.protocol.query").setLevel(org.apache.log4j.Level.OFF);
+		LogManager.getLogger("org.mongodb.driver.protocol.update").setLevel(org.apache.log4j.Level.OFF);
+		 -->
 	<loggers>
+		<logger name="org.mongodb" level="INFO"/>
+		<logger name="org.netty" level="INFO"/>
 		<Root level="debug">
 			<AppenderRef ref="Console"/>
 			<AppenderRef ref="RollingFile"/>

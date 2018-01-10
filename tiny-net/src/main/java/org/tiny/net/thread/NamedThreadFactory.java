@@ -5,7 +5,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * default
- * @author chunbo
  */
 public class NamedThreadFactory implements ThreadFactory{
 	
