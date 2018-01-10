@@ -19,6 +19,7 @@
 	<module>tiny-config</module> // 表格、协议等相关配置信息
 	<module>tiny-link</module> // link服务器，服务器和客户端的中转
 	<module>tiny-net</module> //  网络相关公用类
+	<module>tiny-db</module> //  内存数据库
 ```
 
 ### 项目功能
