@@ -8,6 +8,7 @@ import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Filters;
 
 public class MongoBase implements DBBase{
 
@@ -26,18 +27,19 @@ public class MongoBase implements DBBase{
 		mongoDataBase = mongoClient.getDatabase("database");
 	}
 	
+	
+	private Document genDocument(byte[] key, byte[] value) {
+		return new Document().append("_key", key).append("value", value);
+	}
+	
 	/**
 	 * mongo 的默认键是 _id
 	 */
 	@Override
 	public boolean insert(String collectionName, byte[] key, byte[] value) {
 		// TODO Auto-generated method stub
-		Document d = new Document()
-				.append("_key", key)
-				.append("value", value);
-		
-		getCollection(collectionName).insertOne(d);
-		return false;
+		getCollection(collectionName).insertOne(genDocument(key, value));
+		return true;
 	}
 
 	@Override
@@ -48,9 +50,11 @@ public class MongoBase implements DBBase{
 	}
 
 	@Override
-	public boolean update(String collectionname, byte[] key, byte[] value) {
+	public boolean update(String collectionName, byte[] key, byte[] value) {
 		// TODO Auto-generated method stub
-		return false;
+//		getCollection(collectionName).updateOne(Filters.eq("_key", key), new Document("$set", new Document("value", value)));
+		getCollection(collectionName).replaceOne(Filters.eq("_key", key), genDocument(key, value));
+		return true;
 	}
 
 	@Override

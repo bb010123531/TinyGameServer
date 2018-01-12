@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Repository;
 
-import tiny.auto.bean.Role;
+import org.tiny.auto.bean.Role;
 
 @Repository("roleDaoImpl")  
 public class RoleDaoImpl implements RoleDao{

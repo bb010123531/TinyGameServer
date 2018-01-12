@@ -1,4 +1,4 @@
-package tiny.auto.bean;
+package org.tiny.auto.bean;
 //auto-gen file, do not edit anyway
 
 public class Role implements org.tiny.base.Bean {
@@ -53,34 +53,54 @@ public class Role implements org.tiny.base.Bean {
 		this.password = password;
 	}
 
-	private tiny.auto.bean.Friend girlFriend = new tiny.auto.bean.Friend();
+	private org.tiny.auto.bean.Friend girlFriend = new org.tiny.auto.bean.Friend();
 
-	public tiny.auto.bean.Friend getGirlFriend() {
+	public org.tiny.auto.bean.Friend getGirlFriend() {
 		return girlFriend;
 	}
 
-	public void setGirlFriend(tiny.auto.bean.Friend girlFriend) {
+	public void setGirlFriend(org.tiny.auto.bean.Friend girlFriend) {
 		this.girlFriend = girlFriend;
 	}
 
-	private java.util.List<tiny.auto.bean.Friend> friends = new java.util.ArrayList<>();
+	private java.util.List<org.tiny.auto.bean.Friend> friends = new java.util.ArrayList<>();
 
-	public java.util.List<tiny.auto.bean.Friend> getFriends() {
+	public java.util.List<org.tiny.auto.bean.Friend> getFriends() {
 		return friends;
 	}
 
-	public void setFriends(java.util.List<tiny.auto.bean.Friend> friends) {
+	public void setFriends(java.util.List<org.tiny.auto.bean.Friend> friends) {
 		this.friends = friends;
 	}
 
-	private java.util.Map<Character, String> bag = new java.util.HashMap<>();
+	private java.util.Map<String, Integer> bag = new java.util.HashMap<>();
 
-	public java.util.Map<Character, String> getBag() {
+	public java.util.Map<String, Integer> getBag() {
 		return bag;
 	}
 
-	public void setBag(java.util.Map<Character, String> bag) {
+	public void setBag(java.util.Map<String, Integer> bag) {
 		this.bag = bag;
+	}
+
+	@Override
+	public Role clone() throws CloneNotSupportedException {
+		Role clone = (Role)super.clone();
+
+		clone.setGirlFriend(girlFriend.clone());
+		java.util.List<org.tiny.auto.bean.Friend> friendsClone = new java.util.ArrayList<>(friends.size());
+		for(org.tiny.auto.bean.Friend bean : friends) {
+			friendsClone.add(bean.clone());
+		}
+		clone.setFriends(friendsClone);
+
+		java.util.Map<String, Integer> bagClone = new java.util.HashMap<>(bag.size());
+		for(java.util.Map.Entry<String, Integer> e : bag.entrySet()) {
+			bagClone.put(e.getKey(), e.getValue());
+		}
+		clone.setBag(bagClone);
+
+		return clone;
 	}
 
 	@Override

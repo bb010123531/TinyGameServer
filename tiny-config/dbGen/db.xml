@@ -8,7 +8,7 @@
 	<variable name="password" type="String"/>
 	<variable name="girlFriend" type="Friend"/>
 	<variable name="friends" type="list" collectionType="ArrayList" value="Friend"/>
-	<variable name="bag" type="map" collectionType="HashMap" key="char" value="String"/>	
+	<variable name="bag" type="map" collectionType="HashMap" key="String" value="int"/>	
 </bean>
 
 <bean name="Friend">
@@ -16,13 +16,13 @@
 	<variable name="applyList" type="list" collectionType="ArrayList" value="long"/>	
 </bean>
 
-<table name="roles" bean="Role"/>
+<table name="roles" key="long" bean="Role"/>
 	
 <bean name="Guild">
 	<variable name="guildId" type="long"/>
 	<variable name="guildName" type="String"/>
 </bean>
 
-<table name="guilds" bean="Guild"/>
+<table name="guilds"  key="long" bean="Guild"/>
 
 </root>

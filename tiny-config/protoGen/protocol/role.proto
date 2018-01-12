@@ -31,3 +31,9 @@ message C2SComplexTest {
 		optional string content = 3;
 	}
 }
+
+message C2SAddItem {
+	optional PROTO_KEY PROTOCOL_KEY = 1 [ default = C2SAddItem_Key];
+	required string itemId = 2;
+	required int32 itemNum = 3;
+}

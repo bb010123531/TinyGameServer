@@ -3408,6 +3408,748 @@ public final class RoleProto {
 
   }
 
+  public interface C2SAddItemOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:C2SAddItem)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional .PROTO_KEY PROTOCOL_KEY = 1 [default = C2SAddItem_Key];</code>
+     */
+    boolean hasPROTOCOLKEY();
+    /**
+     * <code>optional .PROTO_KEY PROTOCOL_KEY = 1 [default = C2SAddItem_Key];</code>
+     */
+    auto.proto.Enum.PROTO_KEY getPROTOCOLKEY();
+
+    /**
+     * <code>required string itemId = 2;</code>
+     */
+    boolean hasItemId();
+    /**
+     * <code>required string itemId = 2;</code>
+     */
+    java.lang.String getItemId();
+    /**
+     * <code>required string itemId = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getItemIdBytes();
+
+    /**
+     * <code>required int32 itemNum = 3;</code>
+     */
+    boolean hasItemNum();
+    /**
+     * <code>required int32 itemNum = 3;</code>
+     */
+    int getItemNum();
+  }
+  /**
+   * Protobuf type {@code C2SAddItem}
+   */
+  public  static final class C2SAddItem extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:C2SAddItem)
+      C2SAddItemOrBuilder {
+    // Use C2SAddItem.newBuilder() to construct.
+    private C2SAddItem(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private C2SAddItem() {
+      pROTOCOLKEY_ = 503;
+      itemId_ = "";
+      itemNum_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private C2SAddItem(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              int rawValue = input.readEnum();
+              auto.proto.Enum.PROTO_KEY value = auto.proto.Enum.PROTO_KEY.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(1, rawValue);
+              } else {
+                bitField0_ |= 0x00000001;
+                pROTOCOLKEY_ = rawValue;
+              }
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              itemId_ = bs;
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              itemNum_ = input.readInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return auto.proto.RoleProto.internal_static_C2SAddItem_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return auto.proto.RoleProto.internal_static_C2SAddItem_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              auto.proto.RoleProto.C2SAddItem.class, auto.proto.RoleProto.C2SAddItem.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int PROTOCOL_KEY_FIELD_NUMBER = 1;
+    private int pROTOCOLKEY_;
+    /**
+     * <code>optional .PROTO_KEY PROTOCOL_KEY = 1 [default = C2SAddItem_Key];</code>
+     */
+    public boolean hasPROTOCOLKEY() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional .PROTO_KEY PROTOCOL_KEY = 1 [default = C2SAddItem_Key];</code>
+     */
+    public auto.proto.Enum.PROTO_KEY getPROTOCOLKEY() {
+      auto.proto.Enum.PROTO_KEY result = auto.proto.Enum.PROTO_KEY.valueOf(pROTOCOLKEY_);
+      return result == null ? auto.proto.Enum.PROTO_KEY.C2SAddItem_Key : result;
+    }
+
+    public static final int ITEMID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object itemId_;
+    /**
+     * <code>required string itemId = 2;</code>
+     */
+    public boolean hasItemId() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string itemId = 2;</code>
+     */
+    public java.lang.String getItemId() {
+      java.lang.Object ref = itemId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          itemId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string itemId = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getItemIdBytes() {
+      java.lang.Object ref = itemId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        itemId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ITEMNUM_FIELD_NUMBER = 3;
+    private int itemNum_;
+    /**
+     * <code>required int32 itemNum = 3;</code>
+     */
+    public boolean hasItemNum() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>required int32 itemNum = 3;</code>
+     */
+    public int getItemNum() {
+      return itemNum_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasItemId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasItemNum()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeEnum(1, pROTOCOLKEY_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, itemId_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeInt32(3, itemNum_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, pROTOCOLKEY_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, itemId_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, itemNum_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof auto.proto.RoleProto.C2SAddItem)) {
+        return super.equals(obj);
+      }
+      auto.proto.RoleProto.C2SAddItem other = (auto.proto.RoleProto.C2SAddItem) obj;
+
+      boolean result = true;
+      result = result && (hasPROTOCOLKEY() == other.hasPROTOCOLKEY());
+      if (hasPROTOCOLKEY()) {
+        result = result && pROTOCOLKEY_ == other.pROTOCOLKEY_;
+      }
+      result = result && (hasItemId() == other.hasItemId());
+      if (hasItemId()) {
+        result = result && getItemId()
+            .equals(other.getItemId());
+      }
+      result = result && (hasItemNum() == other.hasItemNum());
+      if (hasItemNum()) {
+        result = result && (getItemNum()
+            == other.getItemNum());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      if (hasPROTOCOLKEY()) {
+        hash = (37 * hash) + PROTOCOL_KEY_FIELD_NUMBER;
+        hash = (53 * hash) + pROTOCOLKEY_;
+      }
+      if (hasItemId()) {
+        hash = (37 * hash) + ITEMID_FIELD_NUMBER;
+        hash = (53 * hash) + getItemId().hashCode();
+      }
+      if (hasItemNum()) {
+        hash = (37 * hash) + ITEMNUM_FIELD_NUMBER;
+        hash = (53 * hash) + getItemNum();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static auto.proto.RoleProto.C2SAddItem parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static auto.proto.RoleProto.C2SAddItem parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static auto.proto.RoleProto.C2SAddItem parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static auto.proto.RoleProto.C2SAddItem parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static auto.proto.RoleProto.C2SAddItem parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static auto.proto.RoleProto.C2SAddItem parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static auto.proto.RoleProto.C2SAddItem parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static auto.proto.RoleProto.C2SAddItem parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static auto.proto.RoleProto.C2SAddItem parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static auto.proto.RoleProto.C2SAddItem parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(auto.proto.RoleProto.C2SAddItem prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code C2SAddItem}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:C2SAddItem)
+        auto.proto.RoleProto.C2SAddItemOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return auto.proto.RoleProto.internal_static_C2SAddItem_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return auto.proto.RoleProto.internal_static_C2SAddItem_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                auto.proto.RoleProto.C2SAddItem.class, auto.proto.RoleProto.C2SAddItem.Builder.class);
+      }
+
+      // Construct using auto.proto.RoleProto.C2SAddItem.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        pROTOCOLKEY_ = 503;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        itemId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        itemNum_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return auto.proto.RoleProto.internal_static_C2SAddItem_descriptor;
+      }
+
+      public auto.proto.RoleProto.C2SAddItem getDefaultInstanceForType() {
+        return auto.proto.RoleProto.C2SAddItem.getDefaultInstance();
+      }
+
+      public auto.proto.RoleProto.C2SAddItem build() {
+        auto.proto.RoleProto.C2SAddItem result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public auto.proto.RoleProto.C2SAddItem buildPartial() {
+        auto.proto.RoleProto.C2SAddItem result = new auto.proto.RoleProto.C2SAddItem(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.pROTOCOLKEY_ = pROTOCOLKEY_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.itemId_ = itemId_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.itemNum_ = itemNum_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof auto.proto.RoleProto.C2SAddItem) {
+          return mergeFrom((auto.proto.RoleProto.C2SAddItem)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(auto.proto.RoleProto.C2SAddItem other) {
+        if (other == auto.proto.RoleProto.C2SAddItem.getDefaultInstance()) return this;
+        if (other.hasPROTOCOLKEY()) {
+          setPROTOCOLKEY(other.getPROTOCOLKEY());
+        }
+        if (other.hasItemId()) {
+          bitField0_ |= 0x00000002;
+          itemId_ = other.itemId_;
+          onChanged();
+        }
+        if (other.hasItemNum()) {
+          setItemNum(other.getItemNum());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasItemId()) {
+          return false;
+        }
+        if (!hasItemNum()) {
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        auto.proto.RoleProto.C2SAddItem parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (auto.proto.RoleProto.C2SAddItem) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private int pROTOCOLKEY_ = 503;
+      /**
+       * <code>optional .PROTO_KEY PROTOCOL_KEY = 1 [default = C2SAddItem_Key];</code>
+       */
+      public boolean hasPROTOCOLKEY() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional .PROTO_KEY PROTOCOL_KEY = 1 [default = C2SAddItem_Key];</code>
+       */
+      public auto.proto.Enum.PROTO_KEY getPROTOCOLKEY() {
+        auto.proto.Enum.PROTO_KEY result = auto.proto.Enum.PROTO_KEY.valueOf(pROTOCOLKEY_);
+        return result == null ? auto.proto.Enum.PROTO_KEY.C2SAddItem_Key : result;
+      }
+      /**
+       * <code>optional .PROTO_KEY PROTOCOL_KEY = 1 [default = C2SAddItem_Key];</code>
+       */
+      public Builder setPROTOCOLKEY(auto.proto.Enum.PROTO_KEY value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        pROTOCOLKEY_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .PROTO_KEY PROTOCOL_KEY = 1 [default = C2SAddItem_Key];</code>
+       */
+      public Builder clearPROTOCOLKEY() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        pROTOCOLKEY_ = 503;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object itemId_ = "";
+      /**
+       * <code>required string itemId = 2;</code>
+       */
+      public boolean hasItemId() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string itemId = 2;</code>
+       */
+      public java.lang.String getItemId() {
+        java.lang.Object ref = itemId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            itemId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string itemId = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getItemIdBytes() {
+        java.lang.Object ref = itemId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          itemId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string itemId = 2;</code>
+       */
+      public Builder setItemId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        itemId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string itemId = 2;</code>
+       */
+      public Builder clearItemId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        itemId_ = getDefaultInstance().getItemId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string itemId = 2;</code>
+       */
+      public Builder setItemIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        itemId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int itemNum_ ;
+      /**
+       * <code>required int32 itemNum = 3;</code>
+       */
+      public boolean hasItemNum() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>required int32 itemNum = 3;</code>
+       */
+      public int getItemNum() {
+        return itemNum_;
+      }
+      /**
+       * <code>required int32 itemNum = 3;</code>
+       */
+      public Builder setItemNum(int value) {
+        bitField0_ |= 0x00000004;
+        itemNum_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int32 itemNum = 3;</code>
+       */
+      public Builder clearItemNum() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        itemNum_ = 0;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:C2SAddItem)
+    }
+
+    // @@protoc_insertion_point(class_scope:C2SAddItem)
+    private static final auto.proto.RoleProto.C2SAddItem DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new auto.proto.RoleProto.C2SAddItem();
+    }
+
+    public static auto.proto.RoleProto.C2SAddItem getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<C2SAddItem>
+        PARSER = new com.google.protobuf.AbstractParser<C2SAddItem>() {
+      public C2SAddItem parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new C2SAddItem(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<C2SAddItem> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<C2SAddItem> getParserForType() {
+      return PARSER;
+    }
+
+    public auto.proto.RoleProto.C2SAddItem getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_Role_descriptor;
   private static final 
@@ -3428,6 +4170,11 @@ public final class RoleProto {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_C2SComplexTest_Option_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_C2SAddItem_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_C2SAddItem_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -3447,8 +4194,10 @@ public final class RoleProto {
       "xTest_Key\022\016\n\006roleId\030\002 \001(\003\022\020\n\010nickName\030\003 " +
       "\001(\t\022&\n\006optins\030\004 \003(\0132\026.C2SComplexTest.Opt" +
       "ion\032?\n\006Option\022\022\n\noptionType\030\001 \001(\005\022\020\n\010has",
-      "Value\030\002 \001(\010\022\017\n\007content\030\003 \001(\tB\027\n\nauto.pro" +
-      "toB\tRoleProto"
+      "Value\030\002 \001(\010\022\017\n\007content\030\003 \001(\t\"_\n\nC2SAddIt" +
+      "em\0220\n\014PROTOCOL_KEY\030\001 \001(\0162\n.PROTO_KEY:\016C2" +
+      "SAddItem_Key\022\016\n\006itemId\030\002 \002(\t\022\017\n\007itemNum\030" +
+      "\003 \002(\005B\027\n\nauto.protoB\tRoleProto"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -3487,6 +4236,12 @@ public final class RoleProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_C2SComplexTest_Option_descriptor,
         new java.lang.String[] { "OptionType", "HasValue", "Content", });
+    internal_static_C2SAddItem_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_C2SAddItem_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_C2SAddItem_descriptor,
+        new java.lang.String[] { "PROTOCOLKEY", "ItemId", "ItemNum", });
     auto.proto.Enum.getDescriptor();
   }
 

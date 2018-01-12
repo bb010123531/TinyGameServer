@@ -1,5 +1,7 @@
 package tiny.gs.handler.msg.role;
 
+import org.tiny.auto.bean.Role;
+import org.tiny.auto.table.Roles;
 import org.tiny.net.log.TinyLogger;
 
 import com.google.protobuf.InvalidProtocolBufferException;
@@ -18,5 +20,9 @@ public class C2SComplexTestHandler implements ProtocolHandler{
 		// TODO Auto-generated method stub
 		C2SComplexTest c2s = C2SComplexTest.parseFrom(userTask.getContentMsg());
 		TinyLogger.LOG.debug("\nrec :" + c2s);
+		
+		long roleId = 0L;
+		Role role = Roles.select(roleId);
+		System.err.println(" ****************** " + role.getNickName());
 	}
 }

@@ -1,4 +1,4 @@
-package tiny.auto.bean;
+package org.tiny.auto.bean;
 //auto-gen file, do not edit anyway
 
 public class Friend implements org.tiny.base.Bean {
@@ -21,6 +21,25 @@ public class Friend implements org.tiny.base.Bean {
 
 	public void setApplyList(java.util.List<Long> applyList) {
 		this.applyList = applyList;
+	}
+
+	@Override
+	public Friend clone() throws CloneNotSupportedException {
+		Friend clone = (Friend)super.clone();
+
+		java.util.List<Long> friendsClone = new java.util.ArrayList<>(friends.size());
+		for(Long bean : friends) {
+			friendsClone.add(bean);
+		}
+		clone.setFriends(friendsClone);
+
+		java.util.List<Long> applyListClone = new java.util.ArrayList<>(applyList.size());
+		for(Long bean : applyList) {
+			applyListClone.add(bean);
+		}
+		clone.setApplyList(applyListClone);
+
+		return clone;
 	}
 
 	@Override

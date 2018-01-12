@@ -10,7 +10,7 @@ import org.tiny.base.MongoBase;
 import org.tiny.net.log.TinyLogger;
 import org.tiny.util.SerializationUtil;
 
-import tiny.auto.bean.Role;
+import org.tiny.auto.bean.Role;
 import tiny.gs.db.RoleDao;
 import tiny.gs.handler.MsgHandler;
 import tiny.gs.handler.ProtocolHandler;
@@ -44,7 +44,7 @@ public class AppContext {
 //            roleDaoImpl.insert(role,collectionName);  
 //        }  
         
-		MongoBase mongo = new MongoBase();
+//		MongoBase mongo = new MongoBase();
 //		for (int i = 0 ; i < 100  ; i++) {
 //			Role role = new Role();
 //			role.setId("" + i);

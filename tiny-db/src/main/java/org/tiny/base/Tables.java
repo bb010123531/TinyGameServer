@@ -16,6 +16,10 @@ public class Tables {
 		tables.put(t.getTableName(), t);
 	}
 	
+	public Table<?, ?> getTableByName(String name) {
+		return tables.get(name);
+	}
+
 	public void loadToCache() {
 		for (Table<?, ?> t : tables.values()) {
 			t.loadDB2Cache();

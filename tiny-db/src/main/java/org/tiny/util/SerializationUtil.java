@@ -48,12 +48,29 @@ public class SerializationUtil {
 
     public static <T> T deserialize(byte[] data, Class<T> cls) {
         try {
-            T message = (T) objenesis.newInstance(cls);
+//            T message = (T) objenesis.newInstance(cls);
             Schema<T> schema = getSchema(cls);
+            T message = schema.newMessage();
             ProtostuffIOUtil.mergeFrom(data, message, schema);
             return message;
         } catch (Exception e) {
             throw new IllegalStateException(e.getMessage(), e);
         }
+    }
+    
+    
+    
+    public static void main(String[] args) {
+    	
+    	org.tiny.auto.bean.Role role = new org.tiny.auto.bean.Role();
+    	role.setAge(12);
+    	role.setId("Ni");
+    	
+    	System.err.println(role);
+    	byte[] to = serialize(role);
+    	
+    	org.tiny.auto.bean.Role o = deserialize(to, org.tiny.auto.bean.Role.class);
+    	
+    	System.err.println(o);
     }
 }

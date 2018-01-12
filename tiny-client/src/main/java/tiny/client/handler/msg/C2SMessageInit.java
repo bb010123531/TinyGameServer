@@ -26,7 +26,9 @@ public class C2SMessageInit extends AbstractChannelHandlerAdapter {
 		Scanner sc = new Scanner(System.in);
 		TinyLogger.LOG.error("等待Console输入指令(1/2)");
 		while (sc.hasNextLine()) {
-			int order = sc.nextInt();
+			String[] in = sc.nextLine().split(" ");
+			
+			int order = Integer.parseInt(in[0]);
 			switch (order) {
 			case 1:
 				RoleProto.C2SRoleInfo.Builder builder = RoleProto.C2SRoleInfo.newBuilder();
@@ -47,6 +49,16 @@ public class C2SMessageInit extends AbstractChannelHandlerAdapter {
 				
 				c2sComplexTest.addAllOptins(options);
 				ctx.writeAndFlush(ProtocolUtil.toC2LMessage(PROTO_KEY.C2SComplexTest_Key_VALUE, c2sComplexTest.build()));
+				break;
+				
+			case 3:
+				String itemId = in[1];
+				int itemNum = Integer.parseInt(in[2]);
+				
+				RoleProto.C2SAddItem.Builder c2sAddItem = RoleProto.C2SAddItem.newBuilder();
+				c2sAddItem.setItemId(itemId);
+				c2sAddItem.setItemNum(itemNum);
+				ctx.writeAndFlush(ProtocolUtil.toC2LMessage(PROTO_KEY.C2SAddItem_Key_VALUE, c2sAddItem.build()));
 				break;
 			}
 		}

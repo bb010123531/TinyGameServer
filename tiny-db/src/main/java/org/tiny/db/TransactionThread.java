@@ -18,11 +18,10 @@ public class TransactionThread implements Runnable{
 			if (p.process()) {
 				t.commit();
 			} else {
-				// may need do nothing
-				// rollback?
-				
+				t.rollback0();
 			}
 		} catch (Exception e) {
+			t.rollback0();
 			e.printStackTrace();
 		} finally {
 			Transaction.end();

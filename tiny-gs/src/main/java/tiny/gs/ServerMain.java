@@ -1,10 +1,10 @@
 package tiny.gs;
 
+import org.tiny.db.DBBootstrap;
 import org.tiny.net.log.TinyLogger;
 
 import tiny.gs.base.AppContext;
 import tiny.gs.config.ConfigManager;
-import tiny.gs.db.DBBootstrap;
 import tiny.gs.net.GameServer;
 
 public class ServerMain {

@@ -26,7 +26,7 @@ public abstract class AbstractMessageThread extends Thread{
 		return isRunning;
 	}
 	
-	protected void addTask(IMessage e) {
+	public void addTask(IMessage e) {
 		waitingQueue.offer(e);
 	}
 	
@@ -44,7 +44,7 @@ public abstract class AbstractMessageThread extends Thread{
 				}
 				
 				for (IMessage m : runningQueue) {
-					
+					m.process();
 				}
 				
 			} catch (Throwable th) {

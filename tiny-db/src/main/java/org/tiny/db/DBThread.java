@@ -1,15 +1,17 @@
 package org.tiny.db;
 
-public class DBThread implements Runnable{
+import org.tiny.net.thread.AbstractMessageThread;
 
+public class DBThread extends AbstractMessageThread{
 	
+	private static final String NAME = "DB-THREAD";
+	public static DBThread instance = new DBThread();
 	
+	private DBThread() {
+		super(NAME);
+	}
 	
-	
-	
-	
-	@Override
-	public void run() {
-		
+	public static DBThread getInstance() {
+		return instance;
 	}
 }

@@ -18,4 +18,5 @@ enum PROTO_KEY {
 	Role_Key		= 500;
 	C2SRoleInfo_Key = 501;
 	C2SComplexTest_Key = 502;
+	C2SAddItem_Key = 503;
 }

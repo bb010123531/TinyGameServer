@@ -1,4 +1,4 @@
-package tiny.auto.table;
+package org.tiny.auto.table;
 //auto-gen file, do not edit anyway
 
 import java.util.Map;
@@ -8,8 +8,8 @@ import org.tiny.base.DBBase;
 import org.tiny.base.MongoBase;
 import org.tiny.util.SerializationUtil;
 
-import tiny.auto.bean.Role;
-import tiny.auto.bean.Guild;
+import org.tiny.auto.bean.Role;
+import org.tiny.auto.bean.Guild;
 public class _Tables_ extends org.tiny.base.Tables {
 
 	private DBBase db = new MongoBase();

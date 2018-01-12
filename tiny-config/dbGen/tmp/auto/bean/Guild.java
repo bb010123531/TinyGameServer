@@ -1,4 +1,4 @@
-package tiny.auto.bean;
+package org.tiny.auto.bean;
 //auto-gen file, do not edit anyway
 
 public class Guild implements org.tiny.base.Bean {
@@ -21,6 +21,13 @@ public class Guild implements org.tiny.base.Bean {
 
 	public void setGuildName(String guildName) {
 		this.guildName = guildName;
+	}
+
+	@Override
+	public Guild clone() throws CloneNotSupportedException {
+		Guild clone = (Guild)super.clone();
+
+		return clone;
 	}
 
 	@Override
